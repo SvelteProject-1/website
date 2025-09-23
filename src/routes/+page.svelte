@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Navbar, Formpopup, Herosection } from '$components';
+	import { Navbar, Formpopup, HeroSection } from '$components';
 
 
 	let showForm = false;
@@ -29,7 +29,7 @@
 
 <div class="relative">
     <!-- Hero underneath -->
-    <Herosection images={heroImages}>
+    <HeroSection images={heroImages}>
         <div>
             <h1 class="mb-4 text-4xl font-bold md:text-6xl">The #1 AI Agent</h1>
             <p class="mx-auto max-w-2xl text-lg opacity-90">
@@ -40,7 +40,7 @@
                 <a href="#learn-more" class="rounded-full bg-white/10 px-8 py-3 font-medium text-white backdrop-blur transition-colors duration-200 hover:bg-white/20">View demo</a>
             </div>
         </div>
-    </Herosection>
+    </HeroSection>
 
     <!-- Navbar overlayed on top without modifications -->
     <div class="pointer-events-none absolute inset-x-0 top-0 z-20">
