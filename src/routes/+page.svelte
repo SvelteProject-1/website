@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Navbar, Formpopup, HeroSection } from '$components';
+    import { Navbar, Formpopup, HeroSection, Footer, Marquee, UniversityCards } from '$components';
 
 
 	let showForm = false;
@@ -31,13 +31,12 @@
     <!-- Hero underneath -->
     <HeroSection images={heroImages}>
         <div>
-            <h1 class="mb-4 text-4xl font-bold md:text-6xl">The #1 AI Agent</h1>
+            <h1 class="mb-4 text-4xl font-bold md:text-6xl">Welcome to Kadaeducation</h1>
             <p class="mx-auto max-w-2xl text-lg opacity-90">
-                Resolving complex queries with speed and reliability.
+                Get in touch with us to learn more about our programs
             </p>
-            <div class="mt-8 flex justify-center gap-4">
-                <button on:click={openForm} class="rounded-full bg-orange-500 px-8 py-3 font-medium text-white transition-colors duration-200 hover:bg-orange-600">Start free trial</button>
-                <a href="#learn-more" class="rounded-full bg-white/10 px-8 py-3 font-medium text-white backdrop-blur transition-colors duration-200 hover:bg-white/20">View demo</a>
+            <div class="mt-8 flex justify-center">
+                <button on:click={openForm} class="rounded-full bg-orange-500 px-8 py-3 font-medium text-white transition-colors duration-200 hover:bg-orange-600">Contact Us</button>
             </div>
         </div>
     </HeroSection>
@@ -51,21 +50,15 @@
 </div>
 
 <!-- Rest of the page content below hero -->
-<section id="learn-more" class="bg-gray-100 py-12">
-    <div class="mx-auto max-w-4xl px-4">
-        <div class="mb-12 text-center">
-            <h2 class="mb-4 text-3xl font-bold text-gray-900">Welcome to Kadaeducation</h2>
-            <p class="mb-8 text-lg text-gray-600">Get in touch with us to learn more about our programs</p>
 
-            <button
-                on:click={openForm}
-                class="rounded-full bg-orange-500 px-8 py-3 font-medium text-white shadow-lg transition-colors duration-200 hover:bg-orange-600 hover:shadow-xl"
-            >
-                Contact Us
-            </button>
-        </div>
-    </div>
-</section>
+<!-- Partners Marquee -->
+<Marquee />
+
+<!-- University Programs Cards -->
+<UniversityCards />
+
+<!-- Footer -->
+<Footer />
 
 <!-- Form Popup Modal -->
 {#if showForm}

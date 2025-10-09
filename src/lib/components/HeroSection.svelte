@@ -56,31 +56,36 @@
 </script>
 
 <!-- Full viewport hero with cross-fade transitions between images -->
-<section class="relative h-screen w-full overflow-hidden bg-black">
-  <!-- Stacked images; only active index is shown, others fade out -->
-  <div class="absolute inset-0">
-    {#key activeIndex}
-      <img
-        src={images[activeIndex]}
-        alt="Hero slide"
-        class="absolute inset-0 h-full w-full object-cover"
-        decoding="async"
-        loading={activeIndex === 0 ? 'eager' : 'lazy'}
-        fetchpriority={activeIndex === 0 ? 'high' : undefined}
-        srcset={`${images[activeIndex]}&w=1280 1280w, ${images[activeIndex]}&w=1536 1536w, ${images[activeIndex]}&w=1920 1920w, ${images[activeIndex]}&w=2560 2560w`}
-        sizes="100vw"
-        in:fade={{ duration: 700 }}
-        out:fade={{ duration: 700 }}
-      />
-    {/key}
-  </div>
+<section class="relative w-full overflow-hidden bg-black">
+  <!-- Container with responsive height -->
+  <div class="relative h-[60vh] md:h-[80vh] lg:h-screen">
+    <!-- Stacked images; only active index is shown, others fade out -->
+    <div class="absolute inset-0">
+      {#key activeIndex}
+        <img
+          src={images[activeIndex]}
+          alt="Hero slide"
+          class="absolute inset-0 h-full w-full object-cover"
+          decoding="async"
+          loading={activeIndex === 0 ? 'eager' : 'lazy'}
+          fetchpriority={activeIndex === 0 ? 'high' : undefined}
+          srcset={images[activeIndex].startsWith('http') ? 
+            `${images[activeIndex]}&w=1280 1280w, ${images[activeIndex]}&w=1536 1536w, ${images[activeIndex]}&w=1920 1920w, ${images[activeIndex]}&w=2560 2560w` : 
+            undefined}
+          sizes="100vw"
+          in:fade={{ duration: 700 }}
+          out:fade={{ duration: 700 }}
+        />
+      {/key}
+    </div>
 
-  <!-- Optional dark overlay for contrast with navbar and content -->
-  <div class="pointer-events-none absolute inset-0 bg-black/40"></div>
+    <!-- Optional dark overlay for contrast with navbar and content -->
+    <div class="pointer-events-none absolute inset-0 bg-black/40"></div>
 
-  <!-- Slot for any centered hero content if needed -->
-  <div class="relative z-10 flex h-full items-center justify-center px-6 text-center text-white">
-    <slot />
+    <!-- Slot for any centered hero content with responsive padding -->
+    <div class="relative z-10 flex h-full items-center justify-center px-4 py-16 md:px-6 md:py-20 text-center text-white">
+      <slot />
+    </div>
   </div>
 </section>
 
