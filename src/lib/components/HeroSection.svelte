@@ -3,9 +3,12 @@
   import { fade } from 'svelte/transition';
 
   export let images: string[] = [
-    'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1920',
-    'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1920',
-    'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1920'
+    '/Images/Manipalimages/manipal01.png',
+    '/Images/Manipalimages/manipal02.png',
+    '/Images/Manipalimages/manipal03.png',
+    '/Images/shoolini/shoolini01.png',
+    '/Images/shoolini/shoolini02.png',
+    '/Images/shoolini/shoolini03.jpeg'
   ];
 
   export let slideIntervalMs: number = 5000;

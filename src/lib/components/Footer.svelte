@@ -43,8 +43,20 @@
 			<div>
 				<h3 class="text-lg font-semibold text-gray-300 mb-4">Connect</h3>
 				<div class="space-y-2">
-					<p class="text-gray-400">LinkedIn</p>
-					<p class="text-gray-400">Instagram</p>
+					<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">LinkedIn</a>
+					<a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">Instagram</a>
+				</div>
+			</div>
+
+			<!-- Quick Links -->
+			<div>
+				<h3 class="text-lg font-semibold text-gray-300 mb-4">Quick Links</h3>
+				<div class="space-y-2">
+					<a href="/compare" class="block text-gray-400 hover:text-white">Compare</a>
+					<a href="/program" class="block text-gray-400 hover:text-white">Program</a>
+					<a href="/reviews" class="block text-gray-400 hover:text-white">Reviews</a>
+					<a href="/faqs" class="block text-gray-400 hover:text-white">FAQs</a>
+					<a href="/ourwhy" class="block text-gray-400 hover:text-white">Our Why</a>
 				</div>
 			</div>
 
@@ -74,14 +86,13 @@
 	<div class="px-8 py-6 border-t border-gray-800">
 		<div class="flex flex-col items-center space-y-6">
 			<!-- Navigation Bar - Centered -->
-			<div class="bg-gray-800 rounded-full border border-gray-700 px-4 py-2">
-				<nav class="flex space-x-6">
-					<a href="/Compare" class="bg-black text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Compare</a>
-					<a href="/Program" class="text-gray-400 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Program</a>
-					<a href="/Reviews" class="text-gray-400 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Reviews</a>
-					<a href="/FAQs" class="text-gray-400 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">FAQs</a>
-					<a href="/OurWhy" class="text-gray-400 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Our Why</a>
-					<a href="/contact" class="text-gray-400 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Contact</a>
+			<div class="bg-gray-800 rounded-full border border-gray-700 px-2 sm:px-4 py-2">
+				<nav class="flex flex-wrap justify-center space-x-2 sm:space-x-6">
+					<a href="/Compare" class="bg-black text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors">Compare</a>
+					<a href="/Program" class="text-gray-400 hover:text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors">Program</a>
+					<a href="/Reviews" class="text-gray-400 hover:text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors">Reviews</a>
+					<a href="/Faqs" class="text-gray-400 hover:text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors">FAQs</a>
+					<a href="/Ourwhy" class="text-gray-400 hover:text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors">Our Why</a>
 				</nav>
 			</div>
 

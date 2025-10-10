@@ -16,8 +16,7 @@
 		showForm = false;
 	}
 
-	function handleFormSubmit(event) {
-		console.log('Form submitted with data:', event.detail);
+	function handleFormSubmit() {
 		// Handle the form submission
 		showForm = false;
 	}
@@ -40,13 +39,13 @@
 				<a href="/Program" class="text-white transition-colors duration-200 hover:text-gray-300">
 					Program
 				</a>
-				<a href="/reviews" class="text-white transition-colors duration-200 hover:text-gray-300">
+				<a href="/Reviews" class="text-white transition-colors duration-200 hover:text-gray-300">
 					Reviews
 				</a>
-				<a href="/faqs" class="text-white transition-colors duration-200 hover:text-gray-300">
+				<a href="/Faqs" class="text-white transition-colors duration-200 hover:text-gray-300">
 					FAQs
 				</a>
-				<a href="/our-why" class="text-white transition-colors duration-200 hover:text-gray-300">
+				<a href="/Ourwhy" class="text-white transition-colors duration-200 hover:text-gray-300">
 					Our Why
 				</a>
 			</div>
@@ -95,15 +94,15 @@
 				class="absolute top-full right-0 left-0 z-50 rounded-b-2xl border-t border-gray-800 bg-gray-900 md:hidden"
 			>
 				<div class="space-y-3 px-6 py-4">
-					<a href="/how-it-works" class="block py-2 text-white hover:text-gray-300">
-						How it works
+					<a href="/Compare" class="block py-2 text-white hover:text-gray-300">
+						Compare
 					</a>
-					<a href="/what-we-test" class="block py-2 text-white hover:text-gray-300">
-						What We Test
+					<a href="/Program" class="block py-2 text-white hover:text-gray-300">
+						Program
 					</a>
-					<a href="/reviews" class="block py-2 text-white hover:text-gray-300"> Reviews </a>
-					<a href="/faqs" class="block py-2 text-white hover:text-gray-300"> FAQs </a>
-					<a href="/our-why" class="block py-2 text-white hover:text-gray-300"> Our Why </a>
+					<a href="/Reviews" class="block py-2 text-white hover:text-gray-300"> Reviews </a>
+					<a href="/Faqs" class="block py-2 text-white hover:text-gray-300"> FAQs </a>
+					<a href="/Ourwhy" class="block py-2 text-white hover:text-gray-300"> Our Why </a>
 					<div class="mt-3 border-t border-gray-800 pt-3">
 						<button
 							on:click={openForm}

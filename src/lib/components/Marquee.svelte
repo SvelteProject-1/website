@@ -1,12 +1,9 @@
 <script lang="ts">
   export let title: string = 'Our Top Global University Partners';
   export let logos: { src: string; alt: string }[] = [
-    { src: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_of_the_University_of_California%2C_Berkeley.svg', alt: 'UC Berkeley' },
-    { src: 'https://upload.wikimedia.org/wikipedia/commons/1/16/MIT_logo.svg', alt: 'MIT' },
-    { src: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Harvard_University_shield.svg', alt: 'Harvard' },
-    { src: 'https://upload.wikimedia.org/wikipedia/commons/1/10/University_of_Cambridge_coat_of_arms.svg', alt: 'Cambridge' },
-    { src: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/University_of_Oxford_coat_of_arms.svg', alt: 'Oxford' },
-    { src: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Stanford_University_seal_2003.svg', alt: 'Stanford' }
+    { src: '/Images/logos/manipallogo.jpg', alt: 'Manipal University' },
+    { src: '/Images/logos/amitylogo.jpg', alt: 'Amity University' },
+    { src: '/Images/logos/shoolini logo.png', alt: 'Shoolini University' }
   ];
 
   export let speedSeconds: number = 25; // lower is faster

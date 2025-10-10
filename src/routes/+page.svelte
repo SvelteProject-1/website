@@ -21,9 +21,9 @@
 	}
 
 	const heroImages = [
-        'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1920&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1920&auto=format&fit=crop'
+        '/Images/Manipalimages/manipal05.jpg',
+        '/Images/shoolini/shoolini01.png',
+        '/Images/amity/amity01.jpg',
     ];
 </script>
 
