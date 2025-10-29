@@ -1,31 +1,59 @@
 <script lang="ts">
     import { Navbar, Footer } from '$components';
     import { onMount } from 'svelte';
+    import { fade } from 'svelte/transition';
 
-    // Countdown timer
-    let days = 0;
-    let hours = 0;
-    let minutes = 0;
-    let seconds = 0;
-
-    // Launch date (set to 30 days from now)
-    const launchDate = new Date('2025-11-10');
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = launchDate.getTime() - now;
-
-        days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    }
-
-    onMount(() => {
-        updateCountdown();
-        const interval = setInterval(updateCountdown, 1000);
-        return () => clearInterval(interval);
-    });
+    // Review data
+    const reviews = [
+        {
+            id: 1,
+            name: 'Sarah Chen',
+            role: 'Computer Science Student',
+            rating: 5,
+            text: 'I really appreciate how comprehensive this platform is! It helped me make an informed decision about my university choice. The detailed program comparisons were invaluable.',
+            image: 'https://source.unsplash.com/random/100x100?woman-1'
+        },
+        {
+            id: 2,
+            name: 'Michael Ross',
+            role: 'Engineering Graduate',
+            rating: 5,
+            text: 'The platform provided exactly what I needed to evaluate different engineering programs. The alumni insights and career outcome data were particularly helpful.',
+            image: 'https://source.unsplash.com/random/100x100?man-1'
+        },
+        {
+            id: 3,
+            name: 'Jessica Taylor',
+            role: 'Business Major',
+            rating: 5,
+            text: 'Great user experience! The comparison tools made it easy to analyze different business schools. Really helped in making my final decision.',
+            image: 'https://source.unsplash.com/random/100x100?woman-2'
+        },
+        {
+            id: 4,
+            name: 'David Kim',
+            role: 'Medical Student',
+            rating: 5,
+            text: 'I was very impressed with the depth of information available about medical programs. The student reviews and program insights were incredibly detailed.',
+            image: 'https://source.unsplash.com/random/100x100?man-2'
+        },
+        {
+            id: 5,
+            name: 'Emily Wilson',
+            role: 'Arts & Design Student',
+            rating: 5,
+            text: 'The visual portfolio examples from different art programs really helped me understand what each school offers. Excellent resource!',
+            image: 'https://source.unsplash.com/random/100x100?woman-3'
+        },
+        {
+            id: 6,
+            name: 'James Anderson',
+            role: 'Graduate Student',
+            rating: 5,
+            text: 'The graduate program comparison tools are fantastic. Made my decision-making process much easier and more informed.',
+            image: 'https://source.unsplash.com/random/100x100?man-3'
+        }
+    ];
 
     // Animation for sections
     let isVisible = false;
@@ -53,81 +81,67 @@
 
 <main class="min-h-screen flex flex-col">
     <!-- Navbar -->
-    <div class="p-4">
+    <div class="w-full">
         <Navbar />
     </div>
 
     <!-- Main Content -->
-    <div class="flex-grow flex items-center justify-center bg-gray-50 px-4">
-        <div class="max-w-4xl mx-auto text-center py-16" use:inView>
-            <!-- Coming Soon Text with Animation -->
-            <div 
-                class="transform transition-all duration-1000"
-                class:opacity-0={!isVisible}
-                class:translate-y-10={!isVisible}
-                class:opacity-100={isVisible}
-                class:translate-y-0={isVisible}
-            >
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-                    Program Reviews
+    <div class="flex-grow bg-gray-50 px-4 sm:px-6 py-12 md:py-16">
+        <div class="max-w-7xl mx-auto" use:inView>
+            <!-- Header -->
+            <div class="text-center mb-12 md:mb-16">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    What Our Users Are
+                    <span class="bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-transparent bg-clip-text">
+                        Saying
+                    </span>
                 </h1>
-                <div class="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
-                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto">
-                    Our comprehensive program review platform is coming soon. Get ready to explore detailed insights about university programs.
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Discover what students and graduates have to say about their experience with our platform
                 </p>
             </div>
 
-            <!-- Countdown Timer -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{days}</div>
-                    <div class="text-gray-600">Days</div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{hours}</div>
-                    <div class="text-gray-600">Hours</div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{minutes}</div>
-                    <div class="text-gray-600">Minutes</div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{seconds}</div>
-                    <div class="text-gray-600">Seconds</div>
-                </div>
-            </div>
+            <!-- Reviews Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {#each reviews as review}
+                    <div 
+                        class="bg-white rounded-xl shadow-sm p-6 flex flex-col"
+                        transition:fade={{duration: 300}}
+                    >
+                        <!-- Review Header -->
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <img
+                                    src={review.image}
+                                    alt={review.name}
+                                    class="w-12 h-12 rounded-full object-cover"
+                                />
+                                <div class="ml-3">
+                                    <h3 class="font-medium text-gray-900">{review.name}</h3>
+                                    <p class="text-sm text-gray-500">{review.role}</p>
+                                </div>
+                            </div>
+                            <!-- Star Rating -->
+                            <div class="flex gap-0.5">
+                                {#each Array(review.rating) as _}
+                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                {/each}
+                            </div>
+                        </div>
 
-            <!-- Feature Previews -->
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Detailed Reviews</h3>
-                    <p class="text-gray-600">In-depth analysis of university programs from real students and experts.</p>
-                </div>
+                        <!-- Review Text -->
+                        <p class="text-gray-600 flex-grow">{review.text}</p>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
+                        <!-- Quote Icon -->
+                        <div class="mt-4 text-orange-500 opacity-20">
+                            <svg class="w-8 h-8 transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.999v10h-9.999z"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Course Catalogs</h3>
-                    <p class="text-gray-600">Complete course listings and curriculum information for each program.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Career Outcomes</h3>
-                    <p class="text-gray-600">Real data on career prospects and alumni success stories.</p>
-                </div>
+                {/each}
             </div>
         </div>
     </div>
@@ -136,6 +150,12 @@
     <Footer />
 </main>
 
-<style lang="postcss">
-    /* Add any component-specific styles here */
+<style>
+    :global(.review-card) {
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    :global(.review-card:hover) {
+        transform: translateY(-4px);
+    }
 </style>

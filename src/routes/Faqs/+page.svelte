@@ -1,132 +1,118 @@
 <script lang="ts">
     import { Navbar, Footer } from '$components';
-    import { onMount } from 'svelte';
+    import { slide } from 'svelte/transition';
 
-    // Countdown timer
-    let days = 0;
-    let hours = 0;
-    let minutes = 0;
-    let seconds = 0;
+    // FAQ data
+    let faqs = [
+        {
+            question: 'Is there a free trial available for the payed options ?',
+            answer: 'Yes, we offer a 14-day free trial for all our premium features. You can explore all the features without any commitment during this period.',
+            isOpen: false
+        },
+        {
+            question: 'Is it possible to subscribe to the app annually ?',
+            answer: 'Yes, we offer both monthly and annual subscription plans. Annual subscriptions come with a significant discount compared to monthly payments.',
+            isOpen: false
+        },
+        {
+            question: 'Is it possible to cancel my subscription ?',
+            answer: 'Yes of course, just send us an email at contact@collegeapp.com with a little reason of why you want to cancel your subscription and you will get a refund between 1-2 business days.',
+            isOpen: false
+        },
+        {
+            question: 'How do I change my account mail ?',
+            answer: 'You can change your email address in your account settings. Go to Profile > Settings > Email, and follow the verification process to update your email.',
+            isOpen: false
+        },
+        {
+            question: 'How can I change my payment method ?',
+            answer: 'To update your payment method, navigate to Settings > Billing & Payments > Payment Methods. You can add a new method or modify existing ones securely.',
+            isOpen: false
+        }
+    ];
 
-    // Launch date (set to 30 days from now)
-    const launchDate = new Date('2025-11-10');
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = launchDate.getTime() - now;
-
-        days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    }
-
-    onMount(() => {
-        updateCountdown();
-        const interval = setInterval(updateCountdown, 1000);
-        return () => clearInterval(interval);
-    });
-
-    // Animation for sections
-    let isVisible = false;
-    function inView(element: HTMLElement) {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        isVisible = true;
-                        observer.unobserve(element);
-                    }
-                });
-            },
-            { threshold: 0.2 }
-        );
-
-        observer.observe(element);
-        return {
-            destroy() {
-                observer.unobserve(element);
-            }
-        };
+    // Toggle FAQ
+    function toggleFaq(index: number) {
+        faqs[index].isOpen = !faqs[index].isOpen;
+        faqs.forEach((faq, i) => {
+            if (i !== index) faq.isOpen = false;
+        });
+        faqs = [...faqs]; // Trigger reactivity
     }
 </script>
 
 <main class="min-h-screen flex flex-col">
     <!-- Navbar -->
-    <div class="p-4">
+    <div class="w-full">
         <Navbar />
     </div>
 
     <!-- Main Content -->
-    <div class="flex-grow flex items-center justify-center bg-gray-50 px-4">
-        <div class="max-w-4xl mx-auto text-center py-16" use:inView>
-            <!-- Coming Soon Text with Animation -->
-            <div 
-                class="transform transition-all duration-1000"
-                class:opacity-0={!isVisible}
-                class:translate-y-10={!isVisible}
-                class:opacity-100={isVisible}
-                class:translate-y-0={isVisible}
-            >
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-                    Frequently Asked Questions
+    <div class="flex-grow bg-gray-50 px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-8 sm:mb-12">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+                    Frequently asked
+                    <span class="block sm:inline bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-transparent bg-clip-text">
+                        questions
+                    </span>
                 </h1>
-                <div class="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
-                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto">
-                    Our comprehensive FAQ section is coming soon. Get ready to find answers to all your university-related questions.
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
+                    Do you need some help with something or do you have questions on some features?
                 </p>
             </div>
 
-            <!-- Countdown Timer -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{days}</div>
-                    <div class="text-gray-600">Days</div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{hours}</div>
-                    <div class="text-gray-600">Hours</div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{minutes}</div>
-                    <div class="text-gray-600">Minutes</div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{seconds}</div>
-                    <div class="text-gray-600">Seconds</div>
-                </div>
+            <!-- FAQ List -->
+            <div class="space-y-3 sm:space-y-4">
+                {#each faqs as faq, index}
+                    <div class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-200 hover:shadow-md">
+                        <button
+                            on:click={() => toggleFaq(index)}
+                            class="w-full px-4 sm:px-6 py-3 sm:py-4 flex items-start sm:items-center justify-between text-left"
+                            aria-expanded={faq.isOpen}
+                        >
+                            <span class="text-base sm:text-lg font-medium text-gray-900 pr-4">{faq.question}</span>
+                            <svg
+                                class="w-5 h-5 sm:w-6 sm:h-6 text-gray-500 transition-transform duration-200 flex-shrink-0 mt-1 sm:mt-0"
+                                class:rotate-180={faq.isOpen}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 9l-7 7-7-7"
+                                />
+                            </svg>
+                        </button>
+                        {#if faq.isOpen}
+                            <div
+                                class="px-4 sm:px-6 pb-3 sm:pb-4 text-sm sm:text-base text-gray-600"
+                                transition:slide={{ duration: 200 }}
+                            >
+                                {faq.answer}
+                            </div>
+                        {/if}
+                    </div>
+                {/each}
             </div>
 
-            <!-- Feature Previews -->
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Smart Search</h3>
-                    <p class="text-gray-600">Find answers quickly with our intelligent search system.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Community Answers</h3>
-                    <p class="text-gray-600">Get insights from students, faculty, and education experts.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Regular Updates</h3>
-                    <p class="text-gray-600">Stay current with the latest information and changes.</p>
+            <!-- Contact Section -->
+            <div class="mt-8 sm:mt-12 text-center px-2">
+                <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Have any other questions?</h2>
+                <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
+                    Don't hesitate to send us an email with your enquiry or statement at:
+                </p>
+                <div class="flex items-center justify-center gap-2 sm:gap-4">
+                    <a
+                        href="mailto:contact@collegeapp.com"
+                        class="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium text-sm sm:text-base break-all"
+                    >
+                        contact@collegeapp.com
+                    </a>
                 </div>
             </div>
         </div>
@@ -136,6 +122,6 @@
     <Footer />
 </main>
 
-<style lang="postcss">
+<style>
     /* Add any component-specific styles here */
 </style>

@@ -1,31 +1,58 @@
 <script lang="ts">
     import { Navbar, Footer } from '$components';
+    import Formpopup from '$lib/components/modal/Formpopup.svelte';
     import { onMount } from 'svelte';
+    import { fade, fly } from 'svelte/transition';
 
-    // Countdown timer
-    let days = 0;
-    let hours = 0;
-    let minutes = 0;
-    let seconds = 0;
+    // Form modal state
+    let showFormModal = false;
 
-    // Launch date (set to 30 days from now)
-    const launchDate = new Date('2025-11-10');
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = launchDate.getTime() - now;
-
-        days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Handle form submission
+    function handleFormSubmit(event: CustomEvent<{ name: string; email: string; contactNo: string }>) {
+        console.log('Form submitted:', event.detail);
+        // Handle the form submission data here
     }
 
-    onMount(() => {
-        updateCountdown();
-        const interval = setInterval(updateCountdown, 1000);
-        return () => clearInterval(interval);
-    });
+    // Close form modal
+    function handleCloseForm() {
+        showFormModal = false;
+    }
+
+    // Reasons data
+    const reasons = [
+        {
+            id: 1,
+            title: 'Prestigious Programs',
+            description: 'Access to top-tier MBA programs from renowned universities, offering the same quality education as on-campus programs with greater flexibility.',
+            color: 'bg-yellow-50',
+            icon: '🎓',
+            iconBg: 'bg-yellow-400'
+        },
+        {
+            id: 2,
+            title: 'Flexible Learning',
+            description: 'Study at your own pace with our flexible online format, allowing you to balance your education with work and personal commitments.',
+            color: 'bg-purple-50',
+            icon: '⌚',
+            iconBg: 'bg-purple-400'
+        },
+        {
+            id: 3,
+            title: 'Career Advancement',
+            description: 'Enhance your career prospects with industry-relevant curriculum, networking opportunities, and personalized career guidance services.',
+            color: 'bg-pink-50',
+            icon: '📈',
+            iconBg: 'bg-pink-400'
+        },
+        {
+            id: 4,
+            title: 'Comprehensive Support',
+            description: 'Benefit from dedicated academic advisors, technical support, and a collaborative learning environment designed for online success.',
+            color: 'bg-blue-50',
+            icon: '🤝',
+            iconBg: 'bg-blue-400'
+        }
+    ];
 
     // Animation for sections
     let isVisible = false;
@@ -53,83 +80,90 @@
 
 <main class="min-h-screen flex flex-col">
     <!-- Navbar -->
-    <div class="p-4">
+    <div class="w-full">
         <Navbar />
     </div>
 
     <!-- Main Content -->
-    <div class="flex-grow flex items-center justify-center bg-gray-50 px-4">
-        <div class="max-w-4xl mx-auto text-center py-16" use:inView>
-            <!-- Coming Soon Text with Animation -->
-            <div 
-                class="transform transition-all duration-1000"
-                class:opacity-0={!isVisible}
-                class:translate-y-10={!isVisible}
-                class:opacity-100={isVisible}
-                class:translate-y-0={isVisible}
-            >
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-                    Our Why
+    <div class="flex-grow bg-gray-50 px-4 sm:px-6 py-12 md:py-16 relative overflow-hidden">
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -right-64 top-1/4 w-96 h-96 rounded-full bg-orange-100 opacity-20 blur-3xl"></div>
+            <div class="absolute -left-64 top-3/4 w-96 h-96 rounded-full bg-red-100 opacity-20 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative" use:inView>
+            <!-- Header -->
+            <div class="text-center mb-16 md:mb-24">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Why <span class="text-blue-500">Choose</span> Our Online MBA Platform?
                 </h1>
-                <div class="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
-                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto">
-                    Discover our mission and vision for transforming education. Coming soon with our complete story.
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Discover why thousands of aspiring business leaders choose our platform for their MBA journey:
                 </p>
             </div>
 
-            <!-- Countdown Timer -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{days}</div>
-                    <div class="text-gray-600">Days</div>
+            <!-- Reasons Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 relative">
+                {#each reasons as reason, i}
+                    <div 
+                        class="relative {reason.color} rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300"
+                        in:fly={{y: 20, duration: 300, delay: i * 150}}
+                    >
+                        <!-- Card Content -->
+                        <div class="relative z-10">
+                            <!-- Icon -->
+                            <div class="mb-4">
+                                <span class="{reason.iconBg} w-10 h-10 rounded-lg flex items-center justify-center text-white text-xl">
+                                    {reason.icon}
+                                </span>
+                            </div>
+
+                            <!-- Text Content -->
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                {reason.title}
+                            </h3>
+                            <p class="text-gray-600">
+                                {reason.description}
+                            </p>
+                        </div>
+
+                        <!-- Decorative Elements -->
+                        <div class="absolute top-4 right-4 opacity-10 text-4xl">
+                            {reason.icon}
+                        </div>
+                    </div>
+                {/each}
+            </div>
+
+            <!-- Additional Section -->
+            <div class="mt-16 text-center">
+                <div class="mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Ready to Transform Your Career?</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mb-6">
+                        Join thousands of successful professionals who have advanced their careers through our online MBA programs.
+                    </p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{hours}</div>
-                    <div class="text-gray-600">Hours</div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{minutes}</div>
-                    <div class="text-gray-600">Minutes</div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{seconds}</div>
-                    <div class="text-gray-600">Seconds</div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="/Program" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 hover:from-red-700 hover:via-orange-600 hover:to-yellow-600 transition-all duration-200 shadow-sm hover:shadow md:text-lg">
+                        Explore Programs
+                    </a>
+                    <button 
+                        on:click={() => showFormModal = true}
+                        class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 shadow-sm hover:shadow md:text-lg"
+                    >
+                        Schedule Consultation
+                    </button>
                 </div>
             </div>
 
-            <!-- Feature Previews -->
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Our Mission</h3>
-                    <p class="text-gray-600">Learn about our commitment to transforming education accessibility.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Our Vision</h3>
-                    <p class="text-gray-600">Discover our roadmap for the future of education.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Our Values</h3>
-                    <p class="text-gray-600">Explore the core principles that drive our platform.</p>
-                </div>
-            </div>
+            <!-- Form Popup Modal -->
+            {#if showFormModal}
+                <Formpopup
+                    on:submit={handleFormSubmit}
+                    on:close={handleCloseForm}
+                />
+            {/if}
         </div>
     </div>
 
@@ -137,6 +171,13 @@
     <Footer />
 </main>
 
-<style lang="postcss">
-    /* Add any component-specific styles here */
+<style>
+    /* Add hover effect to cards */
+    :global(.reason-card) {
+        transition: all 0.3s ease-in-out;
+    }
+    
+    :global(.reason-card:hover) {
+        transform: translateY(-4px);
+    }
 </style>
