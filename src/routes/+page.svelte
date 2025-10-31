@@ -21,16 +21,14 @@
 	}
 
 	const heroImages = [
-        '/Images/Manipalimages/manipal05.jpg',
-        '/Images/shoolini/shoolini01.png',
-        '/Images/amity/amity01.jpg',
+        '/Images/amity/kada_education.png',
     ];
 </script>
 
 <div class="relative">
     <!-- Hero underneath -->
     <HeroSection images={heroImages}>
-        <div>
+        <!-- <div>
             <h1 class="mb-4 text-4xl font-bold md:text-6xl">Welcome to Kadaeducation</h1>
             <p class="mx-auto max-w-2xl text-lg opacity-90">
                 Get in touch with us to learn more about our programs
@@ -38,7 +36,7 @@
             <div class="mt-8 flex justify-center">
                 <button on:click={openForm} class="rounded-full bg-orange-500 px-8 py-3 font-medium text-white transition-colors duration-200 hover:bg-orange-600">Contact Us</button>
             </div>
-        </div>
+        </div> -->
     </HeroSection>
 
     <!-- Navbar overlayed on top without modifications -->
