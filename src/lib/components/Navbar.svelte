@@ -1,11 +1,40 @@
 <script>
 	import { Formpopup } from '$components';
+	import { onMount } from 'svelte';
 
 	let isMenuOpen = false;
 	let showForm = false;
+	let isNavVisible = true;
+	let isHovered = false;
+
+	// Initialize visibility timer on mount
+	onMount(() => {
+		setTimeout(() => {
+			if (!isHovered) {
+				isNavVisible = false;
+			}
+		}, 3000); // Hide after 3 seconds
+	});
+
+	function handleMouseEnter() {
+		isHovered = true;
+		isNavVisible = true;
+	}
+
+	function handleMouseLeave() {
+		isHovered = false;
+		if (!isMenuOpen) {
+			isNavVisible = false;
+		}
+	}
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
+		if (isMenuOpen) {
+			isNavVisible = true;
+		} else if (!isHovered) {
+			isNavVisible = false;
+		}
 	}
 
 	function openForm() {
@@ -23,8 +52,13 @@
 </script>
 
 <!-- Container with padding to create space around navbar -->
-<div class="p-4">
-	<nav class="relative mx-auto max-w-6xl rounded-2xl bg-gray-900 px-6 py-4 text-white shadow-2xl">
+<div 
+	class="p-4 fixed top-0 left-0 right-0 z-50"
+	on:mouseenter={handleMouseEnter}
+	on:mouseleave={handleMouseLeave}
+	role="navigation"
+>
+	<nav class="relative mx-auto max-w-6xl rounded-2xl bg-gray-900 px-6 py-4 text-white shadow-2xl transition-all duration-300 ease-in-out {isNavVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}">
 		<div class="flex items-center justify-between">
 			<!-- Logo -->
 			<div class="flex-shrink-0">
