@@ -21,7 +21,7 @@
 	}
 
 	const heroImages = [
-        '/Images/amity/kada_education01.jpg',
+        '/Images/amity/kada_education.png',
         '/Images/Manipalimages/manipal05.jpg',
         '/Images/shoolini/shoolini01.png',
         '/Images/amity/amity01.jpg',
