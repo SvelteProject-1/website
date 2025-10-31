@@ -56,9 +56,8 @@
 	class="p-4 fixed top-0 left-0 right-0 z-50"
 	on:mouseenter={handleMouseEnter}
 	on:mouseleave={handleMouseLeave}
-	role="navigation"
 >
-	<nav class="relative mx-auto max-w-6xl rounded-2xl bg-gray-900 px-6 py-4 text-white shadow-2xl transition-all duration-300 ease-in-out {isNavVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}">
+	<nav class="relative mx-auto max-w-6xl rounded-2xl bg-gray-900 px-6 py-4 text-white shadow-2xl">
 		<div class="flex items-center justify-between">
 			<!-- Logo -->
 			<div class="flex-shrink-0">
