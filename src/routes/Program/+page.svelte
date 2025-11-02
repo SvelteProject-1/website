@@ -1,54 +1,123 @@
 <script lang="ts">
     import { Navbar, Footer } from '$components';
-    import { onMount } from 'svelte';
+    import { fade, fly } from 'svelte/transition';
+    import Formpopup from '$lib/components/modal/Formpopup.svelte';
 
-    // Countdown timer
-    let days = 0;
-    let hours = 0;
-    let minutes = 0;
-    let seconds = 0;
+    // Form modal state
+    let showFormModal = false;
+    let selectedUniversity: typeof universities[0] | null = null;
 
-    // Launch date (set to 30 days from now)
-    const launchDate = new Date('2025-11-10');
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = launchDate.getTime() - now;
-
-        days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Handle form submission
+    function handleFormSubmit(event: CustomEvent<{ name: string; email: string; contactNo: string }>) {
+        console.log('Form submitted:', event.detail);
+        // Handle the form submission data here
     }
 
-    onMount(() => {
-        updateCountdown();
-        const interval = setInterval(updateCountdown, 1000);
-        return () => clearInterval(interval);
-    });
-
-    // Animation for sections
-    let isVisible = false;
-    function inView(element: HTMLElement) {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        isVisible = true;
-                        observer.unobserve(element);
-                    }
-                });
-            },
-            { threshold: 0.2 }
-        );
-
-        observer.observe(element);
-        return {
-            destroy() {
-                observer.unobserve(element);
-            }
-        };
+    // Close form modal
+    function handleCloseForm() {
+        showFormModal = false;
+        selectedUniversity = null;
     }
+
+    // Function to open form with specific university
+    function openFormForUniversity(university: typeof universities[0]) {
+        selectedUniversity = university;
+        showFormModal = true;
+    }
+
+    // University Programs Data
+    const universities = [
+        {
+            name: "IIM Bangalore",
+            logoUrl: "/images/iim-b-logo.png", // You'll need to add these images
+            rating: 4.8,
+            reviews: 428,
+            duration: "24 months",
+            fee: "₹24,50,000",
+            specializations: ["Finance", "Marketing", "Operations", "Strategy"],
+            features: [
+                "Internationally Accredited",
+                "Industry-Leading Faculty",
+                "Alumni Network of 10,000+",
+                "Live Online Classes"
+            ]
+        },
+        {
+            name: "IIM Ahmedabad",
+            logoUrl: "/images/iim-a-logo.png",
+            rating: 4.9,
+            reviews: 512,
+            duration: "24 months",
+            fee: "₹25,00,000",
+            specializations: ["Finance", "Marketing", "Strategy", "Leadership"],
+            features: [
+                "Global Recognition",
+                "Executive Mentorship",
+                "Career Support",
+                "Weekend Classes"
+            ]
+        },
+        {
+            name: "XLRI Jamshedpur",
+            logoUrl: "/images/xlri-logo.png",
+            rating: 4.7,
+            reviews: 385,
+            duration: "20 months",
+            fee: "₹22,00,000",
+            specializations: ["HR", "Finance", "Marketing", "Operations"],
+            features: [
+                "Industry Partnerships",
+                "Research Excellence",
+                "Flexible Schedule",
+                "Personal Coaching"
+            ]
+        },
+        {
+            name: "ISB Hyderabad",
+            logoUrl: "/images/isb-logo.png",
+            rating: 4.8,
+            reviews: 456,
+            duration: "22 months",
+            fee: "₹26,50,000",
+            specializations: ["Entrepreneurship", "Finance", "Technology", "Strategy"],
+            features: [
+                "Global Faculty",
+                "Innovation Focus",
+                "Leadership Development",
+                "Hybrid Learning"
+            ]
+        },
+        {
+            name: "FMS Delhi",
+            logoUrl: "/images/fms-logo.png",
+            rating: 4.6,
+            reviews: 342,
+            duration: "24 months",
+            fee: "₹21,00,000",
+            specializations: ["Finance", "Marketing", "Analytics", "Operations"],
+            features: [
+                "Research-Driven",
+                "Industry Connect",
+                "Experiential Learning",
+                "Flexible Format"
+            ]
+        },
+        {
+            name: "MDI Gurgaon",
+            logoUrl: "/images/mdi-logo.png",
+            rating: 4.7,
+            reviews: 298,
+            duration: "24 months",
+            fee: "₹23,50,000",
+            specializations: ["Strategy", "Finance", "Marketing", "Digital Business"],
+            features: [
+                "Contemporary Curriculum",
+                "Expert Faculty",
+                "International Exposure",
+                "Network Building"
+            ]
+        }
+    ];
 </script>
 
 <main class="min-h-screen flex flex-col">
@@ -58,77 +127,97 @@
     </div>
 
     <!-- Main Content -->
-    <div class="flex-grow flex items-center justify-center bg-gray-50 px-4">
-        <div class="max-w-4xl mx-auto text-center py-16" use:inView>
-            <!-- Coming Soon Text with Animation -->
-            <div 
-                class="transform transition-all duration-1000"
-                class:opacity-0={!isVisible}
-                class:translate-y-10={!isVisible}
-                class:opacity-100={isVisible}
-                class:translate-y-0={isVisible}
-            >
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-                    Program Reviews
+    <div class="flex-grow bg-gray-50 px-4 sm:px-6 py-12 md:py-16 pt-24 md:pt-28">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-12 md:mb-16">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Our Partner
+                    <span class="bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-transparent bg-clip-text">
+                        Universities
+                    </span>
                 </h1>
-                <div class="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
-                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto">
-                    Our comprehensive program review platform is coming soon. Get ready to explore detailed insights about university programs.
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Choose from India's top business schools offering online MBA programs designed for working professionals
                 </p>
             </div>
 
-            <!-- Countdown Timer -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{days}</div>
-                    <div class="text-gray-600">Days</div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{hours}</div>
-                    <div class="text-gray-600">Hours</div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{minutes}</div>
-                    <div class="text-gray-600">Minutes</div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                    <div class="text-4xl font-bold text-orange-500 mb-2">{seconds}</div>
-                    <div class="text-gray-600">Seconds</div>
-                </div>
+            <!-- University Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {#each universities as university}
+                    <div 
+                        class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+                        transition:fade={{duration: 300}}
+                    >
+                        <!-- University Header -->
+                        <div class="px-6 py-4 border-b border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-gray-900">{university.name}</h3>
+                                <div class="flex items-center">
+                                    <span class="text-yellow-400 mr-1">★</span>
+                                    <span class="text-gray-700 font-medium">{university.rating}</span>
+                                    <span class="text-gray-400 text-sm ml-1">({university.reviews})</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <div>
+                                    <span class="text-gray-500">Duration:</span>
+                                    <span class="text-gray-700 font-medium ml-1">{university.duration}</span>
+                                </div>
+                                <div>
+                                    <span class="text-gray-500">Fee:</span>
+                                    <span class="text-gray-700 font-medium ml-1">{university.fee}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Specializations -->
+                        <div class="px-6 py-4 border-b border-gray-100">
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Specializations</h4>
+                            <div class="flex flex-wrap gap-2">
+                                {#each university.specializations as spec}
+                                    <span class="px-2 py-1 bg-gray-100 rounded-full text-xs text-gray-600">
+                                        {spec}
+                                    </span>
+                                {/each}
+                            </div>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="px-6 py-4">
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Key Features</h4>
+                            <ul class="space-y-2">
+                                {#each university.features as feature}
+                                    <li class="flex items-center text-sm text-gray-600">
+                                        <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        {feature}
+                                    </li>
+                                {/each}
+                            </ul>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div class="px-6 py-4 bg-gray-50">
+                            <button
+                                on:click={() => openFormForUniversity(university)}
+                                class="w-full py-2 px-4 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white font-medium rounded-lg hover:from-red-700 hover:via-orange-600 hover:to-yellow-600 transition-all duration-200"
+                            >
+                                Request Information
+                            </button>
+                        </div>
+                    </div>
+                {/each}
             </div>
 
-            <!-- Feature Previews -->
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Detailed Reviews</h3>
-                    <p class="text-gray-600">In-depth analysis of university programs from real students and experts.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Course Catalogs</h3>
-                    <p class="text-gray-600">Complete course listings and curriculum information for each program.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Career Outcomes</h3>
-                    <p class="text-gray-600">Real data on career prospects and alumni success stories.</p>
-                </div>
-            </div>
+            <!-- Form Popup Modal -->
+            {#if showFormModal}
+                <Formpopup
+                    on:submit={handleFormSubmit}
+                    on:close={handleCloseForm}
+                />
+            {/if}
         </div>
     </div>
 

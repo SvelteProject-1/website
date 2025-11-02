@@ -7,51 +7,45 @@
     const reviews = [
         {
             id: 1,
-            name: 'Sarah Chen',
-            role: 'Computer Science Student',
+            name: "Priya Sharma",
+            role: "Marketing Director",
             rating: 5,
-            text: 'I really appreciate how comprehensive this platform is! It helped me make an informed decision about my university choice. The detailed program comparisons were invaluable.',
-            image: 'https://source.unsplash.com/random/100x100?woman-1'
+            text: "The online MBA program exceeded my expectations! I could maintain my executive position while studying. The flexible schedule and real-world case studies helped me immediately apply learning to my work."
         },
         {
             id: 2,
-            name: 'Michael Ross',
-            role: 'Engineering Graduate',
+            name: "Rahul Verma",
+            role: "Finance Manager",
             rating: 5,
-            text: 'The platform provided exactly what I needed to evaluate different engineering programs. The alumni insights and career outcome data were particularly helpful.',
-            image: 'https://source.unsplash.com/random/100x100?man-1'
+            text: "Choosing this online MBA was the best career decision I've made. The program's focus on financial leadership and global markets perfectly aligned with my career goals. Within months, I secured a promotion."
         },
         {
             id: 3,
-            name: 'Jessica Taylor',
-            role: 'Business Major',
+            name: "Anjali Patel",
+            role: "Entrepreneurship Graduate",
             rating: 5,
-            text: 'Great user experience! The comparison tools made it easy to analyze different business schools. Really helped in making my final decision.',
-            image: 'https://source.unsplash.com/random/100x100?woman-2'
+            text: "As a startup founder, the entrepreneurship track in the online MBA was invaluable. The networking opportunities with other business leaders and mentorship programs helped me scale my business while studying."
         },
         {
             id: 4,
-            name: 'David Kim',
-            role: 'Medical Student',
+            name: "Arjun Mehta",
+            role: "Operations Manager",
             rating: 5,
-            text: 'I was very impressed with the depth of information available about medical programs. The student reviews and program insights were incredibly detailed.',
-            image: 'https://source.unsplash.com/random/100x100?man-2'
+            text: "The online MBA's supply chain management specialization transformed my approach to operations. Despite being fully remote, the interactive sessions and group projects provided practical insights I use daily."
         },
         {
             id: 5,
-            name: 'Emily Wilson',
-            role: 'Arts & Design Student',
+            name: "Neha Gupta",
+            role: "Technology Consultant",
             rating: 5,
-            text: 'The visual portfolio examples from different art programs really helped me understand what each school offers. Excellent resource!',
-            image: 'https://source.unsplash.com/random/100x100?woman-3'
+            text: "Balancing consulting projects with studies seemed daunting, but the program's flexibility made it manageable. The digital business courses were particularly relevant to my consulting work."
         },
         {
             id: 6,
-            name: 'James Anderson',
-            role: 'Graduate Student',
+            name: "Aditya Kapoor",
+            role: "Project Management Executive",
             rating: 5,
-            text: 'The graduate program comparison tools are fantastic. Made my decision-making process much easier and more informed.',
-            image: 'https://source.unsplash.com/random/100x100?man-3'
+            text: "The online MBA's focus on strategic management and leadership development was exactly what I needed. The international cohort brought diverse perspectives to our virtual discussions, enriching the learning experience."
         }
     ];
 
@@ -86,18 +80,18 @@
     </div>
 
     <!-- Main Content -->
-    <div class="flex-grow bg-gray-50 px-4 sm:px-6 py-12 md:py-16">
+    <div class="flex-grow bg-gray-50 px-4 sm:px-6 py-12 md:py-16 pt-24 md:pt-28">
         <div class="max-w-7xl mx-auto" use:inView>
             <!-- Header -->
             <div class="text-center mb-12 md:mb-16">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                    What Our Users Are
+                    Our MBA Success
                     <span class="bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-transparent bg-clip-text">
-                        Saying
+                        Stories
                     </span>
                 </h1>
                 <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                    Discover what students and graduates have to say about their experience with our platform
+                    Hear from our alumni about how our online MBA program transformed their careers while maintaining work-life balance
                 </p>
             </div>
 
@@ -110,16 +104,9 @@
                     >
                         <!-- Review Header -->
                         <div class="flex items-start justify-between mb-4">
-                            <div class="flex items-center">
-                                <img
-                                    src={review.image}
-                                    alt={review.name}
-                                    class="w-12 h-12 rounded-full object-cover"
-                                />
-                                <div class="ml-3">
-                                    <h3 class="font-medium text-gray-900">{review.name}</h3>
-                                    <p class="text-sm text-gray-500">{review.role}</p>
-                                </div>
+                            <div>
+                                <h3 class="font-medium text-gray-900 text-lg">{review.name}</h3>
+                                <p class="text-sm text-gray-500">{review.role}</p>
                             </div>
                             <!-- Star Rating -->
                             <div class="flex gap-0.5">

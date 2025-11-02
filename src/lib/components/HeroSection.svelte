@@ -12,6 +12,8 @@
   ];
 
   export let slideIntervalMs: number = 5000;
+  export let overlayOpacity: number = 40; // 0 to 100, default 40%
+  export let showOverlay: boolean = true;
 
   let activeIndex = 0;
   let intervalId: ReturnType<typeof setInterval> | undefined;
@@ -83,7 +85,12 @@
     </div>
 
     <!-- Optional dark overlay for contrast with navbar and content -->
-    <div class="pointer-events-none absolute inset-0 bg-black/40"></div>
+    {#if showOverlay}
+      <div 
+        class="pointer-events-none absolute inset-0" 
+        style="background-color: rgba(0, 0, 0, {overlayOpacity/100})"
+      ></div>
+    {/if}
 
     <!-- Slot for any centered hero content with responsive padding -->
     <div class="relative z-10 flex h-full items-center justify-center px-4 py-16 md:px-6 md:py-20 text-center text-white">

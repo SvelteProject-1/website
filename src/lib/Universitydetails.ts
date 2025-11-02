@@ -43,6 +43,20 @@ export const universityPrograms: ReadonlyArray<UniversityProgram> = [
     tag: 'Research Focus',
     cta: 'APPLY NOW',
     href: '/Landingpage/Shoolini'
+  },
+  {
+    id: 'amity-university',
+    university: 'Amity University',
+    country: 'India',
+    title: 'Innovative Online Programs',
+    level: "Bachelor's Degree",
+    duration: '3 Years',
+    highlights: ['Industry Collaboration', 'State-of-the-Art Infrastructure', 'Global Alumni Network'],
+    image: '/Images/amity/amity01.jpg',
+    badge: 'Top Ranked University',
+    tag: 'Innovative Learning',
+    cta: 'APPLY NOW',
+    href: '/Landingpage/Amity'
   }
 ];
 

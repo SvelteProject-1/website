@@ -85,7 +85,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="flex-grow bg-gray-50 px-4 sm:px-6 py-12 md:py-16 relative overflow-hidden">
+    <div class="flex-grow bg-gray-50 px-4 sm:px-6 py-12 md:py-16 pt-24 md:pt-28 relative overflow-hidden">
         <!-- Background Decorations -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute -right-64 top-1/4 w-96 h-96 rounded-full bg-orange-100 opacity-20 blur-3xl"></div>

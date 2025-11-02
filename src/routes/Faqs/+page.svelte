@@ -43,12 +43,12 @@
 
 <main class="min-h-screen flex flex-col">
     <!-- Navbar -->
-    <div class="w-full">
+    <div class="w-full sticky top-0 z-50 bg-white shadow-sm">
         <Navbar />
     </div>
 
     <!-- Main Content -->
-    <div class="flex-grow bg-gray-50 px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+    <div class="flex-grow bg-gray-50 px-4 sm:px-6 py-20 sm:py-24 md:py-28">
         <div class="max-w-4xl mx-auto">
             <!-- Header -->
             <div class="text-center mb-8 sm:mb-12">

@@ -5,5 +5,7 @@ import HeroSection from './HeroSection.svelte';
 import Footer from './Footer.svelte';
 import Marquee from './Marquee.svelte';
 import UniversityCards from './UniversityCards.svelte';
+import Whatsapp from './Whatsapp.svelte';
+import Calling from './Calling.svelte';
 
-export { Navbar, Formpopup, HeroSection, Footer, Marquee, UniversityCards };
+export { Navbar, Formpopup, HeroSection, Footer, Marquee, UniversityCards,Whatsapp,Calling };
