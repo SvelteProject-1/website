@@ -57,6 +57,19 @@ export const universityPrograms: ReadonlyArray<UniversityProgram> = [
     tag: 'Innovative Learning',
     cta: 'APPLY NOW',
     href: '/Landingpage/Amity'
+  },{
+    id: 'DY-Patil-university',
+    university: 'DY Patil University',
+    country: 'India',
+    title: 'Cutting-Edge Online Programs',
+    level: "Bachelor's Degree",
+    duration: '3 Years',
+    highlights: ['Industry Integration', 'Modern Facilities', 'Vibrant Campus Life'],
+    image: '/Images/DY/dy1.jpg',
+    badge: 'Top Ranked University',
+    tag: 'Cutting-Edge Learning',
+    cta: 'APPLY NOW',
+    href: '/Landingpage/DY'
   }
 ];
 
