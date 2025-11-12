@@ -3,7 +3,9 @@
   export let logos: { src: string; alt: string }[] = [
     { src: '/Images/logos/manipallogo.jpg', alt: 'Manipal University' },
     { src: '/Images/logos/amitylogo.jpg', alt: 'Amity University' },
-    { src: '/Images/logos/shoolini logo.png', alt: 'Shoolini University' }
+    { src: '/Images/logos/shoolini logo.png', alt: 'Shoolini University' },
+    { src: '/Images/logos/DYpatil.png', alt: 'University of Sydney' },
+
   ];
 
   export let speedSeconds: number = 25; // lower is faster

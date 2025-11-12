@@ -2,9 +2,52 @@
 	import '../app.css';
 	import Whatsapp from '$lib/components/Whatsapp.svelte';
 	import Calling from '$lib/components/Calling.svelte';
+	import Formpopup from '$lib/components/modal/Formpopup.svelte';
 	// import favicon from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
+
+	let showForm = $state(false);
+
+	function openForm() {
+		showForm = true;
+	}
+
+	function closeForm() {
+		showForm = false;
+	}
+
+	function handleFormSubmit(
+		event: CustomEvent<{ name: string; email: string; contactNo: string }>
+	) {
+		console.log('Form submitted with data:', event.detail);
+		// Here you can handle the form data, e.g., send to your backend
+		// The confirmation modal is now handled within the Formpopup component
+	}
+
+	// Listen for popup form open event
+	import { onMount } from 'svelte';
+	onMount(() => {
+		window.addEventListener('openFormPopup', openForm);
+
+		// Auto-dispatch the open event for first-time visitors only.
+		// We do this here because `Formpopup` is mounted conditionally in this
+		// layout; its own onMount won't run unless it's mounted. Dispatching the
+		// event causes `showForm` to become true and the component to mount,
+		// where it performs its own localStorage check and animation.
+		try {
+			let alreadyShown = false;
+			if (typeof window !== 'undefined' && window.localStorage) {
+				alreadyShown = !!localStorage.getItem('formpopup_auto_shown');
+			}
+			if (!alreadyShown) {
+				// minor delay to ensure listener registration and avoid race conditions
+				setTimeout(() => window.dispatchEvent(new Event('openFormPopup')), 150);
+			}
+		} catch (e) {
+			// ignore storage or other errors
+		}
+	});
 </script>
 
 <svelte:head>
@@ -62,6 +105,10 @@
 </svelte:head>
 
 {@render children?.()}
-
 <Whatsapp />
 <Calling phoneNumber="+919876543210" />
+
+<!-- Form Popup Modal -->
+{#if showForm}
+	<Formpopup on:close={closeForm} on:submit={handleFormSubmit} />
+{/if}

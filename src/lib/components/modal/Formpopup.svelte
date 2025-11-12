@@ -20,6 +20,9 @@
 
 	// Animation states
 	let modalVisible = false;
+	// Track whether this instance was auto-opened so we only set the "shown" flag
+	// when the user closes an auto-opened modal. This preserves manual usage.
+	let autoOpened = false;
 	let formStep = 0;
 	let fieldFocus: { [key: string]: boolean } = {
 		name: false,
@@ -27,17 +30,45 @@
 		contactNo: false
 	};
 
-	// Initialize modal animation
+	// Initialize modal animation and auto-open once per visitor
 	import { onMount } from 'svelte';
 	onMount(() => {
-		setTimeout(() => {
-			modalVisible = true;
-		}, 50);
+		// localStorage can throw in some restricted environments; protect with try/catch
+		let alreadyShown = false;
+		try {
+			if (typeof window !== 'undefined' && window.localStorage) {
+				alreadyShown = !!localStorage.getItem('formpopup_auto_shown');
+			}
+		} catch (e) {
+			// fail silently and default to showing the modal
+			alreadyShown = false;
+		}
+
+		if (!alreadyShown) {
+			// Auto-open once for new visitors
+			setTimeout(() => {
+				modalVisible = true;
+				autoOpened = true;
+			}, 50);
+		} else {
+			// Keep existing behavior: do not auto-open if already shown
+		}
 	});
 
 	// Close modal with animation
 	function closeModal() {
 		modalVisible = false;
+		// If this modal was auto-opened for the visitor, mark it as shown so it
+		// won't auto-open again on subsequent visits. Do this before dispatching
+		// the close event so any parent logic still receives the event normally.
+		try {
+			if (autoOpened && typeof window !== 'undefined' && window.localStorage) {
+				localStorage.setItem('formpopup_auto_shown', '1');
+			}
+		} catch (e) {
+			// ignore storage errors
+		}
+
 		setTimeout(() => {
 			dispatch('close');
 		}, 300);
