@@ -26,98 +26,69 @@
     }
 
     // University Programs Data
-    const universities = [
-        {
-            name: "IIM Bangalore",
-            logoUrl: "/images/iim-b-logo.png", // You'll need to add these images
-            rating: 4.8,
-            reviews: 428,
-            duration: "24 months",
-            fee: "₹24,50,000",
-            specializations: ["Finance", "Marketing", "Operations", "Strategy"],
-            features: [
-                "Internationally Accredited",
-                "Industry-Leading Faculty",
-                "Alumni Network of 10,000+",
-                "Live Online Classes"
-            ]
-        },
-        {
-            name: "IIM Ahmedabad",
-            logoUrl: "/images/iim-a-logo.png",
-            rating: 4.9,
-            reviews: 512,
-            duration: "24 months",
-            fee: "₹25,00,000",
-            specializations: ["Finance", "Marketing", "Strategy", "Leadership"],
-            features: [
-                "Global Recognition",
-                "Executive Mentorship",
-                "Career Support",
-                "Weekend Classes"
-            ]
-        },
-        {
-            name: "XLRI Jamshedpur",
-            logoUrl: "/images/xlri-logo.png",
-            rating: 4.7,
-            reviews: 385,
-            duration: "20 months",
-            fee: "₹22,00,000",
-            specializations: ["HR", "Finance", "Marketing", "Operations"],
-            features: [
-                "Industry Partnerships",
-                "Research Excellence",
-                "Flexible Schedule",
-                "Personal Coaching"
-            ]
-        },
-        {
-            name: "ISB Hyderabad",
-            logoUrl: "/images/isb-logo.png",
-            rating: 4.8,
-            reviews: 456,
-            duration: "22 months",
-            fee: "₹26,50,000",
-            specializations: ["Entrepreneurship", "Finance", "Technology", "Strategy"],
-            features: [
-                "Global Faculty",
-                "Innovation Focus",
-                "Leadership Development",
-                "Hybrid Learning"
-            ]
-        },
-        {
-            name: "FMS Delhi",
-            logoUrl: "/images/fms-logo.png",
-            rating: 4.6,
-            reviews: 342,
-            duration: "24 months",
-            fee: "₹21,00,000",
-            specializations: ["Finance", "Marketing", "Analytics", "Operations"],
-            features: [
-                "Research-Driven",
-                "Industry Connect",
-                "Experiential Learning",
-                "Flexible Format"
-            ]
-        },
-        {
-            name: "MDI Gurgaon",
-            logoUrl: "/images/mdi-logo.png",
-            rating: 4.7,
-            reviews: 298,
-            duration: "24 months",
-            fee: "₹23,50,000",
-            specializations: ["Strategy", "Finance", "Marketing", "Digital Business"],
-            features: [
-                "Contemporary Curriculum",
-                "Expert Faculty",
-                "International Exposure",
-                "Network Building"
-            ]
-        }
-    ];
+const universities = [
+  {
+    name: "Manipal University",
+    logoUrl: "/Images/Manipalimages/manipal01.png",
+    rating: 4.8,
+    reviews: 428,
+    duration: "2 Years",
+    fee: "NAAC A+ Accredited",
+    specializations: ["Industry-Led Curriculum", "Placement Assistance"],
+    features: ["Top Ranked University", "Premium Education", "APPLY NOW", "/Landingpage/Manipal"]
+  },
+  {
+    name: "Shoolini University",
+    logoUrl: "/Images/shoolini/shoolini01.png",
+    rating: 4.9,
+    reviews: 512,
+    duration: "2 Years",
+    fee: "NAAC A+ Accredited",
+    specializations: ["Research Excellence", "Global Recognition"],
+    features: ["Top Ranked University", "Research Focus", "APPLY NOW", "/Landingpage/Shoolini"]
+  },
+  {
+    name: "Amity University",
+    logoUrl: "/Images/amity/amity01.jpg",
+    rating: 4.7,
+    reviews: 385,
+    duration: "3 Years",
+    fee: "Industry Collaboration",
+    specializations: ["State-of-the-Art Infrastructure", "Global Alumni Network"],
+    features: ["Top Ranked University", "Innovative Learning", "APPLY NOW", "/Landingpage/Amity"]
+  },
+  {
+    name: "DY Patil University",
+    logoUrl: "/Images/DY/dy1.jpg",
+    rating: 4.8,
+    reviews: 456,
+    duration: "3 Years",
+    fee: "Industry Integration",
+    specializations: ["Modern Facilities", "Vibrant Campus Life"],
+    features: ["Top Ranked University", "Cutting-Edge Learning", "APPLY NOW", "/Landingpage/DY"]
+  },
+  {
+    name: "Lovely Professional University",
+    logoUrl: "/Images/LPU/lpu1.jpg",
+    rating: 4.6,
+    reviews: 342,
+    duration: "3 Years",
+    fee: "NAAC A++ Accredited",
+    specializations: ["Industry Partnerships", "Global Recognition"],
+    features: ["Top Ranked University", "Excellence in Education", "APPLY NOW", "/Landingpage/LPU"]
+  },
+  {
+    name: "Uttranchal University",
+    logoUrl: "/Images/Uttranchal/uttranchal1.jpg",
+    rating: 4.7,
+    reviews: 298,
+    duration: "3 Years",
+    fee: "NAAC Accredited",
+    specializations: ["Modern Infrastructure", "Industry Focused"],
+    features: ["Recognized University", "Quality Education", "APPLY NOW", "/Landingpage/Uttranchal"]
+  }
+];
+
 </script>
 
 <main class="min-h-screen flex flex-col">

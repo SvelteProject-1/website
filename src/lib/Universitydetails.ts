@@ -58,19 +58,47 @@ export const universityPrograms: ReadonlyArray<UniversityProgram> = [
     cta: 'APPLY NOW',
     href: '/Landingpage/Amity'
   },{
-    id: 'DY-Patil-university',
-    university: 'DY Patil University',
-    country: 'India',
-    title: 'Cutting-Edge Online Programs',
-    level: "Bachelor's Degree",
-    duration: '3 Years',
-    highlights: ['Industry Integration', 'Modern Facilities', 'Vibrant Campus Life'],
-    image: '/Images/DY/dy1.jpg',
-    badge: 'Top Ranked University',
-    tag: 'Cutting-Edge Learning',
-    cta: 'APPLY NOW',
-    href: '/Landingpage/DY'
-  }
+   id: 'DY-Patil-university',
+   university: 'DY Patil University',
+   country: 'India',
+   title: 'Cutting-Edge Online Programs',
+   level: "Bachelor's Degree",
+   duration: '3 Years',
+   highlights: ['Industry Integration', 'Modern Facilities', 'Vibrant Campus Life'],
+   image: '/Images/DY/dy1.jpg',
+   badge: 'Top Ranked University',
+   tag: 'Cutting-Edge Learning',
+   cta: 'APPLY NOW',
+   href: '/Landingpage/DY'
+ },
+ {
+   id: 'LPU-university',
+   university: 'Lovely Professional University',
+   country: 'India',
+   title: 'Comprehensive Online Programs',
+   level: "Bachelor's Degree",
+   duration: '3 Years',
+   highlights: ['NAAC A++ Accredited', 'Industry Partnerships', 'Global Recognition'],
+   image: '/Images/LPU/lpu1.jpg',
+   badge: 'Top Ranked University',
+   tag: 'Excellence in Education',
+   cta: 'APPLY NOW',
+   href: '/Landingpage/LPU'
+ },
+ {
+   id: 'Uttranchal-university',
+   university: 'Uttranchal University',
+   country: 'India',
+   title: 'Quality Education Programs',
+   level: "Bachelor's Degree",
+   duration: '3 Years',
+   highlights: ['NAAC Accredited', 'Modern Infrastructure', 'Industry Focused'],
+   image: '/Images/Uttranchal/uttranchal1.jpg',
+   badge: 'Recognized University',
+   tag: 'Quality Education',
+   cta: 'APPLY NOW',
+   href: '/Landingpage/Uttranchal'
+ }
 ];
 
 
