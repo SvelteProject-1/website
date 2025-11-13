@@ -6,9 +6,16 @@
 	import { onMount } from 'svelte';
 
 	let showForm = false;
+	let formPopup: any;
 
 	function openForm() {
 		showForm = true;
+		// Wait for the component to mount, then open the modal
+		setTimeout(() => {
+			if (formPopup) {
+				formPopup.openModal();
+			}
+		}, 10);
 	}
 
 	function closeForm() {
@@ -500,7 +507,7 @@
 </main>
 
 {#if showForm}
-	<Formpopup on:close={closeForm} on:submit={handleFormSubmit} />
+	<Formpopup bind:this={formPopup} autoOpen={false} on:close={closeForm} on:submit={handleFormSubmit} />
 {/if}
 
 <style lang="postcss">
