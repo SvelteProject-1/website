@@ -33,9 +33,9 @@ const universities = [
     rating: 4.8,
     reviews: 428,
     duration: "2 Years",
-    fee: "NAAC A+ Accredited",
-    specializations: ["Industry-Led Curriculum", "Placement Assistance"],
-    features: ["Top Ranked University", "Premium Education", "APPLY NOW", "/Landingpage/Manipal"]
+    fee: "INR 1,75,000",
+    specializations: ["NAC A++", "NIRF Ranked 3"],
+    features: ["100% placement assistance", "Dual specialization", "Legacy since 1951", "Global Recognition"]
   },
   {
     name: "Shoolini University",
@@ -44,48 +44,48 @@ const universities = [
     reviews: 512,
     duration: "2 Years",
     fee: "NAAC A+ Accredited",
-    specializations: ["Research Excellence", "Global Recognition"],
-    features: ["Top Ranked University", "Research Focus", "APPLY NOW", "/Landingpage/Shoolini"]
+    specializations: ["NAAC A+", "PAY AFTER PLACEMENT", "100% PLACEMENT GUARANTEE"],
+    features: ["Industry focused", "Research Focus", "Indias first private university"]
   },
   {
     name: "Amity University",
     logoUrl: "/Images/amity/amity01.jpg",
     rating: 4.7,
     reviews: 385,
-    duration: "3 Years",
-    fee: "Industry Collaboration",
-    specializations: ["State-of-the-Art Infrastructure", "Global Alumni Network"],
-    features: ["Top Ranked University", "Innovative Learning", "APPLY NOW", "/Landingpage/Amity"]
+    duration: "2 Years",
+    fee: "INR 1,99,000",
+    specializations: ["NAAC A+", "NIRF Ranked 32", "100% PLACEMENT GUARANTEE"],
+    features: ["Top Ranked University", "Industrial Collaboration", "Global Alumni Network"]
   },
   {
     name: "DY Patil University",
     logoUrl: "/Images/DY/dy1.jpg",
     rating: 4.8,
     reviews: 456,
-    duration: "3 Years",
-    fee: "Industry Integration",
-    specializations: ["Modern Facilities", "Vibrant Campus Life"],
-    features: ["Top Ranked University", "Cutting-Edge Learning", "APPLY NOW", "/Landingpage/DY"]
+    duration: "2 Years",
+    fee: "INR 1,45,400",
+    specializations: ["NAAC A+", "TOP 50 PRIVATE UNIVERSITY","40 YEAR OF LEGACY"],
+    features: ["150,000 + Alumni Network", "Research Excellence", "Top Medical college in india"]
   },
   {
     name: "Lovely Professional University",
     logoUrl: "/Images/LPU/lpu1.jpg",
     rating: 4.6,
     reviews: 342,
-    duration: "3 Years",
-    fee: "NAAC A++ Accredited",
-    specializations: ["Industry Partnerships", "Global Recognition"],
-    features: ["Top Ranked University", "Excellence in Education", "APPLY NOW", "/Landingpage/LPU"]
+    duration: "2 Years",
+    fee: "INR 1,46,240",
+    specializations: ["NAAC A+", "NIRF Ranked 31", "DUAL SPECIALIZATION"],
+    features: ["Advance LMS portal", "100% placement assistance", "Industrial Partnership","Recognized University"]
   },
   {
     name: "Uttranchal University",
     logoUrl: "/Images/Uttranchal/uttranchal1.jpg",
     rating: 4.7,
     reviews: 298,
-    duration: "3 Years",
-    fee: "NAAC Accredited",
-    specializations: ["Modern Infrastructure", "Industry Focused"],
-    features: ["Recognized University", "Quality Education", "APPLY NOW", "/Landingpage/Uttranchal"]
+    duration: "2 Years",
+    fee: "INR 98,000",
+    specializations: ["NAAC A+", "30% DISCOUNT ON FEES",],
+    features: ["100% placement assistance", "Industrial partnership", "affordables fees","Inforces certification free of cost"]
   }
 ];
 
