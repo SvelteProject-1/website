@@ -186,7 +186,7 @@
             </svg>
           </div>
           <h3 class="font-bold mb-2">Fees</h3>
-          <p class="text-pink-600 font-bold">₹24,500</p>
+          <p class="text-pink-600 font-bold">₹30,000</p>
           <p class="text-sm text-gray-600">Per Semester</p>
         </div>
 
@@ -209,9 +209,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
             </svg>
           </div>
-          <h3 class="font-bold mb-2">Study Abroad</h3>
-          <p class="text-pink-600 font-bold">INTERNATIONAL</p>
-          <p class="text-sm text-gray-600">Options in US/UK/Canada/Australia</p>
+          <h3 class="font-bold mb-2">Free Add on Course</h3>
+          <p class="text-pink-600 font-bold">Free Course</p>
+          <p class="text-sm text-gray-600">Like Adda 24x7, Study IQ, Preinsta</p>
         </div>
       </div>
     </div>
@@ -236,11 +236,11 @@
             <img src="/Images/shoolini/shoolini03.jpeg" alt="Engineering programs" class="w-full h-full object-cover"/>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Engineering & Technology</h3>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Management studies</h3>
             <ul class="space-y-2 text-gray-600 mb-4">
               <li class="flex items-center">
                 <span class="text-pink-600 mr-2">•</span>
-                Cutting-edge programs
+                MCA, BBA, MBA, MBA
               </li>
               <li class="flex items-center">
                 <span class="text-pink-600 mr-2">•</span>
@@ -437,8 +437,8 @@
               class="w-20 h-20 rounded-full mx-auto object-cover border-4 border-pink-600"
             />
           </div>
-          <h3 class="text-pink-600 text-xl font-semibold mb-1">Sarah Johnson</h3>
-          <p class="text-gray-400 text-sm mb-6">Computer Science Graduate</p>
+          <h3 class="text-pink-600 text-xl font-semibold mb-1">Anshika Pandey</h3>
+          <p class="text-gray-400 text-sm mb-6">MBA Graduate</p>
           <p class="text-gray-300 leading-relaxed">
             "Studying at Shoolini University was a transformative experience. The cutting-edge 
             facilities and supportive faculty helped me achieve my career goals. The beautiful 

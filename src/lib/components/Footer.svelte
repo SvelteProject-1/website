@@ -12,7 +12,7 @@
 				<div class="rounded-full border border-black/60 bg-black/0 px-3 py-1">
 					<span class="text-black text-sm font-medium">YEAR FOUNDED</span>
 				</div>
-				<span class="text-black text-4xl font-bold">2024</span>
+				<span class="text-black text-4xl font-bold">2015</span>
 			</div>
 			
 			<!-- Location -->
@@ -35,7 +35,7 @@
 				<h3 class="text-lg font-semibold text-gray-300 mb-4">Get in touch</h3>
 				<div class="space-y-2">
 					<p class="text-gray-400">business@kadaeducation.com</p>
-					<p class="text-gray-400">hello@kadaeducation.com</p>
+					<p class="text-gray-400">info@kadaeducation.com</p>
 				</div>
 			</div>
 
