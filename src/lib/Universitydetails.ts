@@ -99,6 +99,20 @@ export const universityPrograms: ReadonlyArray<UniversityProgram> = [
    cta: 'APPLY NOW',
    href: '/Landingpage/Uttranchal'
  }
+ ,{
+  id: 'NMIMS-university',
+  university: 'NMIMS University',
+  country: 'India',
+  title: 'Dynamic Online Programs',
+  level: "Master's Degree",
+  duration: '2 Years',
+  highlights: ['Industry-Relevant Curriculum', 'Experienced Faculty', 'Global Exposure'],
+  image: '/Images/NMIMS/nmims01.png',
+  badge: 'Top Ranked University',
+  tag: 'Dynamic Learning',
+  cta: 'APPLY NOW',
+  href: '/Landingpage/NMIMS'
+ }
 ];
 
 
