@@ -7,5 +7,6 @@ import Marquee from './Marquee.svelte';
 import UniversityCards from './UniversityCards.svelte';
 import Whatsapp from './Whatsapp.svelte';
 import Calling from './Calling.svelte';
+import ComparisonModal from './ComparisonModal.svelte';
 
-export { Navbar, Formpopup, HeroSection, Footer, Marquee, UniversityCards,Whatsapp,Calling };
+export { Navbar, Formpopup, HeroSection, Footer, Marquee, UniversityCards, Whatsapp, Calling, ComparisonModal };
