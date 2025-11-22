@@ -5,7 +5,7 @@
     { src: '/Images/logos/amitylogo.jpg', alt: 'Amity University' },
     { src: '/Images/logos/shoolini logo.png', alt: 'Shoolini University' },
     { src: '/Images/logos/DYpatil.png', alt: 'University of Sydney' },
-
+    { src: '/Images/logos/nmims.png', alt: 'NMIMS University' },
   ];
 
   export let speedSeconds: number = 25; // lower is faster
