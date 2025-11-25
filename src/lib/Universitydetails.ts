@@ -93,7 +93,7 @@ export const universityPrograms: ReadonlyArray<UniversityProgram> = [
    level: "Bachelor's Degree",
    duration: '3 Years',
    highlights: ['NAAC Accredited', 'Modern Infrastructure', 'Industry Focused'],
-   image: '/Images/Uttranchal/uttranchal1.jpg',
+   image: '/Images/Uttranchal/uttranchal1.png',
    badge: 'Recognized University',
    tag: 'Quality Education',
    cta: 'APPLY NOW',

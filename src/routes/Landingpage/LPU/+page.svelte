@@ -10,12 +10,6 @@
 
 	function openForm() {
 		showForm = true;
-		// Wait for the component to mount, then open the modal
-		setTimeout(() => {
-			if (formPopup) {
-				formPopup.openModal();
-			}
-		}, 10);
 	}
 
 	function closeForm() {
@@ -28,8 +22,8 @@
 
 	const lpuImages = [
 		'/Images/LPU/lpu1.jpg',
-		'/Images/LPU/lpu2.jpg',
-        '/Images/LPU/lpu3.jpg'
+		'/Images/LPU/lpu2.jpeg',
+	       '/Images/LPU/lpu3.webp'
 	];
 
 	let universityVisible = false;
@@ -63,10 +57,13 @@
 	<div class="relative">
 		<HeroSection images={lpuImages} overlayOpacity={30}>
 			<div class="text-center max-w-4xl px-4 animate-fade-in">
-				<div class="inline-block text-black px-6 py-2 rounded-full mb-4 font-bold text-xl shadow-lg animate-bounce" style="background-color: #d32f2f;">PAY-AFTER-PLACEMENT</div>
+				<!-- CHANGED: badge text from "PAY-AFTER-PLACEMENT" to brochure accreditation -->
+				<div class="inline-block text-black px-6 py-2 rounded-full mb-4 font-bold text-xl shadow-lg animate-bounce" style="background-color: #d32f2f;">NAAC A++</div> <!-- CHANGED -->
 				<h1 class="text-4xl md:text-6xl font-bold mb-4 animate-slide-up" style="animation-delay: 0.2s">Online MBA</h1>
-				<p class="text-2xl md:text-3xl mb-2 animate-slide-up" style="animation-delay: 0.4s">Professional Development Programs</p>
-				<p class="text-3xl md:text-4xl font-bold mb-6 animate-slide-up" style="color: #d32f2f; animation-delay: 0.6s">LPU - India's Largest University</p>
+				<!-- CHANGED: clarified program specialization -->
+				<p class="text-2xl md:text-3xl mb-2 animate-slide-up" style="animation-delay: 0.4s">Master of Business Administration (Finance)</p> <!-- CHANGED -->
+				<!-- CHANGED: university name to match brochure usage -->
+				<p class="text-3xl md:text-4xl font-bold mb-6 animate-slide-up" style="color: #d32f2f; animation-delay: 0.6s">LPU Online</p> <!-- CHANGED -->
 				<div class="flex justify-center gap-4 mb-8 animate-slide-up" style="animation-delay: 0.8s"></div>
 				<button
 					on:click={openForm}
@@ -97,7 +94,8 @@
 				<div class="flex justify-center items-center gap-4 mb-6">
 					<img src="/Images/logos/lpu-logo.png" alt="LPU Logo" class="h-16 animate-pulse" />
 					<div>
-						<h2 class="text-3xl md:text-4xl font-bold text-gray-900">Lovely Professional University</h2>
+						<!-- CHANGED: university heading -->
+						<h2 class="text-3xl md:text-4xl font-bold text-gray-900">Lovely Professional University (LPU Online)</h2> <!-- CHANGED -->
 						<div class="flex items-center justify-center gap-2 mt-2">
 							<span class="font-bold" style="color: #d32f2f;">Online Degrees</span>
 							<span class="bg-red-600 text-white px-2 py-1 rounded text-sm animate-bounce">NAAC A++</span>
@@ -105,7 +103,8 @@
 						</div>
 					</div>
 				</div>
-				<p class="text-gray-600 max-w-2xl mx-auto">India's largest university offering comprehensive professional education and career-focused programs.</p>
+				<!-- CHANGED: blurb aligned with brochure -->
+				<p class="text-gray-600 max-w-2xl mx-auto">India's largest university offering an Online MBA (Finance) with industry-aligned curriculum, live weekend lectures and extensive recorded content. (Details from brochure).</p> <!-- CHANGED -->
 			</div>
 
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -121,8 +120,8 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-2">Professional Excellence</h3>
-					<p class="text-gray-600">Industry-aligned curriculum designed for professional success and career advancement.</p>
+					<h3 class="text-xl font-semibold text-gray-900 mb-2">Program Focus</h3> <!-- CHANGED -->
+					<p class="text-gray-600">Online MBA (Finance) focusing on Financial Modelling, International Finance, Security Analysis & Portfolio Management and related finance skills.</p> <!-- CHANGED -->
 				</div>
 
 				<div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-2"
@@ -137,8 +136,8 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-2">Global Partnerships</h3>
-					<p class="text-gray-600">International collaborations and exchange programs for global exposure.</p>
+					<h3 class="text-xl font-semibold text-gray-900 mb-2">Learning Mode</h3> <!-- CHANGED -->
+					<p class="text-gray-600">Live weekend lectures, 400+ hours of recorded content, and interactive faculty support via chat and forums.</p> <!-- CHANGED -->
 				</div>
 
 				<div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-2"
@@ -153,8 +152,8 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-2">Comprehensive Campus</h3>
-					<p class="text-gray-600">State-of-the-art facilities and infrastructure for holistic development.</p>
+					<h3 class="text-xl font-semibold text-gray-900 mb-2">Infrastructure</h3>
+					<p class="text-gray-600">Robust LMS, proctored technology-enabled exams, and career/placement support.</p> <!-- CHANGED -->
 				</div>
 			</div>
 		</div>
@@ -170,7 +169,7 @@
 				style="transition: all 0.8s ease-out"
 			>
 				<h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: #d32f2f;">Program Highlights</h2>
-				<p class="text-gray-600 max-w-2xl mx-auto">Comprehensive learning experience with industry mentors and placement support.</p>
+				<p class="text-gray-600 max-w-2xl mx-auto">Key features from the brochure: contemporary finance curriculum, financial modelling, in-demand finance skills, and placement support.</p> <!-- CHANGED -->
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
@@ -188,7 +187,7 @@
 					</div>
 					<h3 class="font-bold mb-2">Duration</h3>
 					<p class="font-bold" style="color: #d32f2f;">2 YEARS</p>
-					<p class="text-sm text-gray-600">Total of 4 Semesters</p>
+					<p class="text-sm text-gray-600">4 Semesters (maximum completion period 4 years).</p> <!-- CHANGED -->
 				</div>
 
 				<div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-2"
@@ -205,7 +204,7 @@
 					</div>
 					<h3 class="font-bold mb-2">Mode</h3>
 					<p class="font-bold" style="color: #d32f2f;">100% ONLINE</p>
-					<p class="text-sm text-gray-600">LIVE + RECORDED Sessions</p>
+					<p class="text-sm text-gray-600">Live + Recorded sessions, interactive LMS.</p>
 				</div>
 
 				<div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-2"
@@ -221,8 +220,9 @@
 						</svg>
 					</div>
 					<h3 class="font-bold mb-2">Fees</h3>
-					<p class="font-bold" style="color: #d32f2f;">₹25,000</p>
-					<p class="text-sm text-gray-600">Per Semester</p>
+					<!-- CHANGED: fee values pulled from brochure -->
+					<p class="font-bold" style="color: #d32f2f;">₹48,000 / semester</p> <!-- CHANGED -->
+					<p class="text-sm text-gray-600">Examination fee: ₹2,000 / semester. For international fee details see brochure/website.</p> <!-- CHANGED -->
 				</div>
 
 				<div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-2"
@@ -238,8 +238,8 @@
 						</svg>
 					</div>
 					<h3 class="font-bold mb-2">Placement</h3>
-					<p class="font-bold" style="color: #d32f2f;">100% SUPPORT</p>
-					<p class="text-sm text-gray-600">Expert Placement Services</p>
+					<p class="font-bold" style="color: #d32f2f;">Robust Placement Support</p>
+					<p class="text-sm text-gray-600">LPU Online highlights strong placement assistance and career services.</p>
 				</div>
 
 				<div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-2"
@@ -254,9 +254,9 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
 						</svg>
 					</div>
-					<h3 class="font-bold mb-2">Study Abroad</h3>
-					<p class="font-bold" style="color: #d32f2f;">INTERNATIONAL</p>
-					<p class="text-sm text-gray-600">Options in US/UK/Canada/Australia</p>
+					<h3 class="font-bold mb-2">International</h3>
+					<p class="font-bold" style="color: #d32f2f;">Global Exposure</p>
+					<p class="text-sm text-gray-600">Options for exposure to international business and collaborations.</p>
 				</div>
 			</div>
 		</div>
@@ -272,7 +272,8 @@
 				style="transition: all 0.8s ease-out"
 			>
 				<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comprehensive Programs</h2>
-				<p class="text-gray-600 max-w-2xl mx-auto">Choose from our extensive range of professional programs designed for career success</p>
+				<!-- CHANGED: description to reference brochure specializations -->
+				<p class="text-gray-600 max-w-2xl mx-auto">Specializations offered (as in brochure): Finance (this page), Human Resource Management, Marketing, Operations, Business Analytics, Digital Marketing, Data Science, IT, International Business, Hospital & Healthcare Management, Logistics & Supply Chain, Banking & Financial Services. (Dual specialization available).</p> <!-- CHANGED -->
 			</div>
 
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -306,6 +307,7 @@
 					</div>
 				</div>
 
+				<!-- other program cards kept same (text / color already matches theme) -->
 				<div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-4 group"
 					class:opacity-0={!programsVisible}
 					class:translate-y-10={!programsVisible}
@@ -420,12 +422,12 @@
 				style="transition: all 0.8s ease-out"
 			>
 				<h2 class="text-3xl md:text-4xl font-bold text-[#d32f2f] mb-4">Student Admission Process and Assistance from us</h2>
-				<p class="text-gray-600">We guide you through every step of your admission journey at Lovely Professional University, ensuring a smooth and hassle-free process.</p>
+				<p class="text-gray-600">We guide you through every step of your admission journey at LPU Online, ensuring a smooth and hassle-free process. See brochure for eligibility and full details.</p> <!-- CHANGED -->
 			</div>
 
 			<div class="grid md:grid-cols-2 gap-8 items-center">
 				<div class="rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500" class:opacity-0={!admissionVisible} class:translate-x-[-100px]={!admissionVisible} class:opacity-100={admissionVisible} class:translate-x-0={admissionVisible} style="transition: all 0.8s ease-out">
-					<img src="/Images/LPU/lpu4.png" alt="LPU University admission process" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+					<img src="/Images/LPU/lpu1.jpg" alt="LPU University admission process" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
 				</div>
 
 				<div class="space-y-6 transform" class:opacity-0={!admissionVisible} class:translate-x-[100px]={!admissionVisible} class:opacity-100={admissionVisible} class:translate-x-0={admissionVisible} style="transition: all 0.8s ease-out">
@@ -453,6 +455,17 @@
 						</div>
 						<span class="text-lg text-gray-800 group-hover:text-[#d32f2f] transition-colors duration-300">Orientation & course commencement</span>
 					</div>
+
+					<!-- CHANGED: contact block added from brochure -->
+					<div class="mt-4 text-sm text-gray-700">
+						<p class="font-semibold">For admission enquiries (from brochure):</p>
+						<p>01824 520001 (For admission-related queries)</p> <!-- CHANGED -->
+						<p>01824 520500 (For newly enrolled or existing students: LMS, classes, exams)</p> <!-- CHANGED -->
+						<p>Email: admissions@lpuonline.com</p> <!-- CHANGED -->
+						<p>Website: www.lpuonline.com</p> <!-- CHANGED -->
+						<p class="text-xs text-gray-500 mt-2">(Contact details taken from LPU brochure).</p> <!-- CHANGED -->
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -469,7 +482,7 @@
 				style="transition: all 0.8s ease-out"
 			>
 				<h2 class="text-3xl md:text-4xl font-bold text-[#d32f2f] mb-4">What Our Students Say About Us</h2>
-				<p class="text-gray-400 max-w-2xl mx-auto">Hear from our students about their experience with Lovely Professional University and how it transformed their careers.</p>
+				<p class="text-gray-400 max-w-2xl mx-auto">Hear from our students about their experience with LPU Online and how it transformed their careers.</p>
 			</div>
 
 			<div class="max-w-3xl mx-auto relative">
@@ -507,14 +520,14 @@
 </main>
 
 {#if showForm}
-	<Formpopup bind:this={formPopup} autoOpen={false} on:close={closeForm} on:submit={handleFormSubmit} />
+	<Formpopup bind:this={formPopup} on:close={closeForm} on:submit={handleFormSubmit} />
 {/if}
 
 <style lang="postcss">
-	:global(.navbar-wrapper .bg-orange-500) { background-color: #d32f2f !important; }
-	:global(.navbar-wrapper .hover\:bg-orange-600:hover) { background-color: #b71c1c !important; }
-	:global(.navbar-wrapper .text-orange-500) { color: #d32f2f !important; }
-	:global(.footer-wrapper .bg-orange-500) { background-color: #d32f2f !important; }
+	:global(.navbar-wrapper .bg-orange-500) { background-color: #d32f2f !important; } /* CHANGED */
+	:global(.navbar-wrapper .hover\:bg-orange-600:hover) { background-color: #b71c1c !important; } /* CHANGED */
+	:global(.navbar-wrapper .text-orange-500) { color: #d32f2f !important; } /* CHANGED */
+	:global(.footer-wrapper .bg-orange-500) { background-color: #d32f2f !important; } /* CHANGED */
 
 	@keyframes float {
 		0%, 100% { transform: translateY(0px); }
