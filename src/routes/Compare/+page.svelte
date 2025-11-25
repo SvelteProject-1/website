@@ -13,10 +13,17 @@
         accreditation: string;
         programs: string[];
         established: number;
-        campusSize: string;
-        studentPopulation: string;
+        campusSize: string | null;
+        studentPopulation: string | null;
         placementRate: string;
-        logo: string;
+        logo: string | null;
+        satisfiedStudent: string;
+        eligibility: string;
+        placementAssistance: string;
+        payAfterPlacement: string;
+        onlineClasses: string;
+        placementCompanies: string;
+        studentRating: string;
     }
 
     let universities: University[] = universitiesData;

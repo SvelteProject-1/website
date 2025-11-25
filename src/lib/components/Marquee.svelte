@@ -6,6 +6,14 @@
     { src: '/Images/logos/shoolini logo.png', alt: 'Shoolini University' },
     { src: '/Images/logos/DYpatil.png', alt: 'University of Sydney' },
     { src: '/Images/logos/nmims.png', alt: 'NMIMS University' },
+    { src: '/Images/logos/lpu-logo.png', alt: 'LPU University' },
+    { src: '/Images/logos/uttranchal-logo.png', alt: 'Uttranchal University' },
+    { src: '/Images/logos/mahilogo.jpg', alt: 'Mahila University' },
+    { src: '/Images/logos/jainlogo.png', alt: 'Jain University' },
+    { src: '/Images/logos/galgotiaslogo.jpeg', alt: 'Galgotias University' },
+    { src: '/Images/logos/chandigarhlogo.png', alt: 'Chandigarh University' },
+    { src: '/Images/logos/noidalogo.png', alt: 'Noida International University' },
+    { src: '/Images/logos/andhralogo.png', alt: 'Andhra University' }
   ];
 
   export let speedSeconds: number = 25; // lower is faster

@@ -515,7 +515,7 @@
 </main>
 
 {#if showForm}
-	<Formpopup bind:this={formPopup} autoOpen={false} on:close={closeForm} on:submit={handleFormSubmit} />
+	<Formpopup bind:this={formPopup} on:close={closeForm} on:submit={handleFormSubmit} />
 {/if}
 
 <style lang="postcss">
