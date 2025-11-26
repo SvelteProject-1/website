@@ -20,7 +20,6 @@
         satisfiedStudent: string;
         eligibility: string;
         placementAssistance: string;
-        payAfterPlacement: string;
         onlineClasses: string;
         placementCompanies: string;
         studentRating: string;
