@@ -221,8 +221,8 @@
 						</svg>
 					</div>
 					<h3 class="font-bold mb-2">Fees</h3>
-					<p class="font-bold" style="color: #831b33;">₹24,500</p>
-					<p class="text-sm text-gray-600">Per Semester</p>
+					<p class="font-bold" style="color: #831b33;"> ₹ 1,89,400</p>
+					<p class="text-sm text-gray-600">Total Fees</p>
 				</div>
 
 				<div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-2"

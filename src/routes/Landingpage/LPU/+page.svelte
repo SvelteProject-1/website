@@ -221,8 +221,8 @@
 					</div>
 					<h3 class="font-bold mb-2">Fees</h3>
 					<!-- CHANGED: fee values pulled from brochure -->
-					<p class="font-bold" style="color: #d32f2f;">₹48,000 / semester</p> <!-- CHANGED -->
-					<p class="text-sm text-gray-600">Examination fee: ₹2,000 / semester. For international fee details see brochure/website.</p> <!-- CHANGED -->
+					<p class="font-bold" style="color: #d32f2f;">₹40,400</p> <!-- CHANGED -->
+					<p class="text-sm text-gray-600">Per Semester</p> <!-- CHANGED -->
 				</div>
 
 				<div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-2"

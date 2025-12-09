@@ -4,32 +4,118 @@
 
     // FAQ data
     let faqs = [
-        {
-            question: 'Is there a free trial available for the payed options ?',
-            answer: 'Yes, we offer a 14-day free trial for all our premium features. You can explore all the features without any commitment during this period.',
-            isOpen: false
-        },
-        {
-            question: 'Is it possible to subscribe to the app annually ?',
-            answer: 'Yes, we offer both monthly and annual subscription plans. Annual subscriptions come with a significant discount compared to monthly payments.',
-            isOpen: false
-        },
-        {
-            question: 'Is it possible to cancel my subscription ?',
-            answer: 'Yes of course, just send us an email at contact@collegeapp.com with a little reason of why you want to cancel your subscription and you will get a refund between 1-2 business days.',
-            isOpen: false
-        },
-        {
-            question: 'How do I change my account mail ?',
-            answer: 'You can change your email address in your account settings. Go to Profile > Settings > Email, and follow the verification process to update your email.',
-            isOpen: false
-        },
-        {
-            question: 'How can I change my payment method ?',
-            answer: 'To update your payment method, navigate to Settings > Billing & Payments > Payment Methods. You can add a new method or modify existing ones securely.',
-            isOpen: false
-        }
-    ];
+    {
+        question: 'What is Kada Education?',
+        answer: 'Kada Education is an online learning and career-guidance platform that helps students explore accredited programs, enroll in online or blended courses, and build industry-ready skills.',
+        isOpen: false
+    },
+    {
+        question: 'Are the programs recognized and accredited?',
+        answer: 'Yes. All programs offered through Kada Education come from authorized and recognized institutions or universities. Accreditation details are provided for each course.',
+        isOpen: false
+    },
+    {
+        question: 'What types of courses do you offer?',
+        answer: 'We offer Undergraduate and Postgraduate Degrees, Diploma and PG Diploma Programs, Professional Certification Courses, Skill-Based Short-Term Courses, and Career-focused Industry Programs.',
+        isOpen: false
+    },
+    {
+        question: 'Are the courses fully online?',
+        answer: 'Most programs are 100% online. Some may offer hybrid (online + on-campus) options depending on the university.',
+        isOpen: false
+    },
+    {
+        question: 'How do I apply for a course?',
+        answer: 'You can fill out the online application form on our website. Our counselor will guide you through eligibility verification, documentation, and enrollment steps.',
+        isOpen: false
+    },
+    {
+        question: 'What documents are required for admission?',
+        answer: 'Typically required documents include ID proof, 10th and 12th marksheets, graduation documents for PG programs, passport-size photographs, and any additional documents as per course requirements.',
+        isOpen: false
+    },
+    {
+        question: 'What is the fee structure?',
+        answer: 'The fee varies by course and university. Each course page displays complete fee details including registration and examination charges.',
+        isOpen: false
+    },
+    {
+        question: 'Do you offer EMI or installment payment options?',
+        answer: 'Yes. Attractive EMI and installment plans are available for many programs.',
+        isOpen: false
+    },
+    {
+        question: 'Are scholarships or discounts available?',
+        answer: 'Yes. Some partner institutions provide scholarships or special fee waivers based on eligibility and academic profile.',
+        isOpen: false
+    },
+    {
+        question: 'How will I attend online classes?',
+        answer: 'You receive access to recorded lectures, live classes, e-books, study materials, assignments, quizzes, and discussion forums.',
+        isOpen: false
+    },
+    {
+        question: 'Do I need special equipment to study?',
+        answer: 'You only need a smartphone or laptop, a stable internet connection, and a basic headset or microphone for live sessions.',
+        isOpen: false
+    },
+    {
+        question: 'What if I miss a live class?',
+        answer: 'All live sessions are recorded and available for you to watch anytime.',
+        isOpen: false
+    },
+    {
+        question: 'How are exams conducted?',
+        answer: 'Exams may be conducted online or offline depending on the university’s policy. Details are provided after enrollment.',
+        isOpen: false
+    },
+    {
+        question: 'Will I receive a certificate or degree?',
+        answer: 'Yes. After successful completion, you will receive a recognized certificate or degree from the offering institution.',
+        isOpen: false
+    },
+    {
+        question: 'Do you provide academic support?',
+        answer: 'Yes. Students get continuous support from faculty, mentors, and counselors throughout the program.',
+        isOpen: false
+    },
+    {
+        question: 'Is technical support available?',
+        answer: 'Yes. We provide dedicated technical assistance for login issues, LMS access, and content-related problems.',
+        isOpen: false
+    },
+    {
+        question: 'Do you offer placement assistance?',
+        answer: 'Yes. We offer resume building, interview training, internship guidance, and job referrals where applicable.',
+        isOpen: false
+    },
+    {
+        question: 'What are the career opportunities after completing a course?',
+        answer: 'Career opportunities depend on the selected program, but all courses are designed to improve job readiness and industry-relevant skills.',
+        isOpen: false
+    },
+    {
+        question: 'Can I study at my own pace?',
+        answer: 'Most programs are self-paced with flexible deadlines. Some may have fixed schedules for live sessions.',
+        isOpen: false
+    },
+    {
+        question: 'Can I pause or defer my course?',
+        answer: 'Deferral depends on university policies. Our team will assist you with the process if needed.',
+        isOpen: false
+    },
+    {
+        question: 'What is your refund policy?',
+        answer: 'Refund policies vary by university. Generally, refunds are allowed only before final enrollment confirmation.',
+        isOpen: false
+    },
+    {
+        question: 'Can I switch to another course?',
+        answer: 'Course changes may be allowed based on university guidelines and program timelines.',
+        isOpen: false
+    }
+];
+
 
     // Toggle FAQ
     function toggleFaq(index: number) {
@@ -108,10 +194,10 @@
                 </p>
                 <div class="flex items-center justify-center gap-2 sm:gap-4">
                     <a
-                        href="mailto:contact@collegeapp.com"
+                        href="https://www.instagram.com/kada_education/"
                         class="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium text-sm sm:text-base break-all"
                     >
-                        contact@collegeapp.com
+                        instagram.com/kada_education
                     </a>
                 </div>
             </div>

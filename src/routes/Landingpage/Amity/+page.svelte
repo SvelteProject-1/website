@@ -102,7 +102,7 @@
           </div>
         </div>
         <p class="text-gray-600 max-w-2xl mx-auto">
-          Join India's No. 1 Private University and experience world-class education with our innovative Pay-After-Placement program
+          Join India's No. 1 Private University and experience world-class education
         </p>
       </div>
 
@@ -188,7 +188,7 @@
             </svg>
           </div>
           <h3 class="font-bold mb-2">Fees</h3>
-          <p class="font-bold" style="color: #edcc13;">₹24,500</p>
+          <p class="font-bold" style="color: #edcc13;">₹49,750</p>
           <p class="text-sm text-gray-600">Per Semester</p>
         </div>
 
