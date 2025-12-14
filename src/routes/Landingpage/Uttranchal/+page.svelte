@@ -274,7 +274,7 @@
 				<p class="text-gray-600 max-w-2xl mx-auto">Comprehensive range of programs designed to meet industry demands and career aspirations</p>
 			</div>
 
-			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
 				<div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-4 group"
 					class:opacity-0={!programsVisible}
 					class:translate-y-10={!programsVisible}
@@ -285,21 +285,20 @@
 					<div class="h-48 relative overflow-hidden flex items-center justify-center" style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%);">
 						<div class="text-center text-white">
 							<svg class="w-16 h-16 mx-auto mb-4 opacity-80" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-								<polyline points="7.5 4.27 12 6.11 16.5 4.27"/>
-								<line x1="12" y1="22.35" x2="12" y2="6.11"/>
-								<polyline points="16.5 19.73 12 17.89 7.5 19.73"/>
-								<polyline points="16.5 13.73 12 11.89 7.5 13.73"/>
+								<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+								<path d="M12 6.5l1.5 3.03L17 10.5l-2.5 2.44.59 3.44L12 14.5l-3.09 1.88.59-3.44L7 10.5l3.5-.97L12 6.5z"/>
 							</svg>
-							<h3 class="text-lg font-semibold">Engineering & Technology</h3>
+							<h3 class="text-lg font-semibold">MBA</h3>
 						</div>
 					</div>
 					<div class="p-6">
-						<h3 class="text-xl font-semibold text-gray-900 mb-2">Engineering & Technology</h3>
+						<h3 class="text-xl font-semibold text-gray-900 mb-2">MBA</h3>
+						<p class="text-gray-600 mb-2">Master of Business Administration</p>
+						<p class="text-[#009688] font-semibold mb-2">Fee: INR 47,000/year</p>
 						<ul class="space-y-2 text-gray-600 mb-4">
-							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse">•</span>Modern engineering programs</li>
-							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.1s">•</span>Practical learning approach</li>
-							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.2s">•</span>Industry collaborations</li>
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse">•</span>Global business perspective</li>
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.1s">•</span>Industry partnerships</li>
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.2s">•</span>Placement assistance</li>
 						</ul>
 						<button on:click={openForm} class="w-full text-white py-2 rounded-lg hover:bg-[#00796b] transition-all duration-300 hover:shadow-lg hover:scale-105" style="background-color: #009688;">Apply Now</button>
 					</div>
@@ -315,18 +314,23 @@
 					<div class="h-48 relative overflow-hidden flex items-center justify-center" style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%);">
 						<div class="text-center text-white">
 							<svg class="w-16 h-16 mx-auto mb-4 opacity-80" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-								<path d="M12 6.5l1.5 3.03L17 10.5l-2.5 2.44.59 3.44L12 14.5l-3.09 1.88.59-3.44L7 10.5l3.5-.97L12 6.5z"/>
+								<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+								<polyline points="7.5 4.27 12 6.11 16.5 4.27"/>
+								<line x1="12" y1="22.35" x2="12" y2="6.11"/>
+								<polyline points="16.5 19.73 12 17.89 7.5 19.73"/>
+								<polyline points="16.5 13.73 12 11.89 7.5 13.73"/>
 							</svg>
-							<h3 class="text-lg font-semibold">Management Studies</h3>
+							<h3 class="text-lg font-semibold">BBA</h3>
 						</div>
 					</div>
 					<div class="p-6">
-						<h3 class="text-xl font-semibold text-gray-900 mb-2">Management Studies</h3>
+						<h3 class="text-xl font-semibold text-gray-900 mb-2">BBA</h3>
+						<p class="text-gray-600 mb-2">Bachelor of Business Administration</p>
+						<p class="text-[#009688] font-semibold mb-2">Fee: INR 32,000</p>
 						<ul class="space-y-2 text-gray-600 mb-4">
-							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse">•</span>Business administration programs</li>
-							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.1s">•</span>Leadership development</li>
-							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.2s">•</span>Entrepreneurial skills</li>
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse">•</span>Foundation in business</li>
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.1s">•</span>Leadership skills</li>
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.2s">•</span>Career development</li>
 						</ul>
 						<button on:click={openForm} class="w-full text-white py-2 rounded-lg hover:bg-[#00796b] transition-all duration-300 hover:shadow-lg hover:scale-105" style="background-color: #009688;">Apply Now</button>
 					</div>
@@ -344,15 +348,49 @@
 							<svg class="w-16 h-16 mx-auto mb-4 opacity-80" fill="currentColor" viewBox="0 0 24 24">
 								<path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
 							</svg>
-							<h3 class="text-lg font-semibold">Applied Sciences</h3>
+							<h3 class="text-lg font-semibold">MCA</h3>
 						</div>
 					</div>
 					<div class="p-6">
-						<h3 class="text-xl font-semibold text-gray-900 mb-2">Applied Sciences</h3>
+						<h3 class="text-xl font-semibold text-gray-900 mb-2">MCA</h3>
+						<p class="text-gray-600 mb-2">Master of Computer Applications</p>
+						<p class="text-[#009688] font-semibold mb-2">Fee: INR 46,000</p>
 						<ul class="space-y-2 text-gray-600 mb-4">
-							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse">•</span>Scientific research programs</li>
-							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.1s">•</span>Laboratory facilities</li>
-							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.2s">•</span>Innovation focus</li>
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse">•</span>Advanced computing skills</li>
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.1s">•</span>Software development</li>
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.2s">•</span>Industry projects</li>
+						</ul>
+						<button on:click={openForm} class="w-full text-white py-2 rounded-lg hover:bg-[#00796b] transition-all duration-300 hover:shadow-lg hover:scale-105" style="background-color: #009688;">Apply Now</button>
+					</div>
+				</div>
+
+				<div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-4 group"
+					class:opacity-0={!programsVisible}
+					class:translate-y-10={!programsVisible}
+					class:opacity-100={programsVisible}
+					class:translate-y-0={programsVisible}
+					style="transition: all 0.8s ease-out; transition-delay: 0.4s"
+				>
+					<div class="h-48 relative overflow-hidden flex items-center justify-center" style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%);">
+						<div class="text-center text-white">
+							<svg class="w-16 h-16 mx-auto mb-4 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+								<polyline points="7.5 4.27 12 6.11 16.5 4.27"/>
+								<line x1="12" y1="22.35" x2="12" y2="6.11"/>
+								<polyline points="16.5 19.73 12 17.89 7.5 19.73"/>
+								<polyline points="16.5 13.73 12 11.89 7.5 13.73"/>
+							</svg>
+							<h3 class="text-lg font-semibold">BCA</h3>
+						</div>
+					</div>
+					<div class="p-6">
+						<h3 class="text-xl font-semibold text-gray-900 mb-2">BCA</h3>
+						<p class="text-gray-600 mb-2">Bachelor of Computer Applications</p>
+						<p class="text-[#009688] font-semibold mb-2">Fee: INR 32,000</p>
+						<ul class="space-y-2 text-gray-600 mb-4">
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse">•</span>Programming fundamentals</li>
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.1s">•</span>Database management</li>
+							<li class="flex items-center"><span class="mr-2 text-[#009688] animate-pulse" style="animation-delay: 0.2s">•</span>IT applications</li>
 						</ul>
 						<button on:click={openForm} class="w-full text-white py-2 rounded-lg hover:bg-[#00796b] transition-all duration-300 hover:shadow-lg hover:scale-105" style="background-color: #009688;">Apply Now</button>
 					</div>

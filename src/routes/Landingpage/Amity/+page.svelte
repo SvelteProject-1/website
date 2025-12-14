@@ -231,45 +231,19 @@
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <!-- Engineering Program -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <!-- MBA Program -->
         <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
           <div class="h-48" style="background-color: #edcc13;">
-            <img src="/Images/amity/amity01.jpg" alt="Engineering programs" class="w-full h-full object-cover"/>
+            <img src="/Images/amity/amity01.jpg" alt="MBA program" class="w-full h-full object-cover"/>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Engineering & Technology</h3>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">MBA</h3>
+            <p class="text-gray-600 mb-2">Master of Business Administration</p>
             <ul class="space-y-2 text-gray-600 mb-4">
               <li class="flex items-center">
                 <span class="mr-2" style="color: #edcc13;">•</span>
-                Cutting-edge programs
-              </li>
-              <li class="flex items-center">
-                <span class="mr-2" style="color: #edcc13;">•</span>
-                Research-focused approach
-              </li>
-              <li class="flex items-center">
-                <span class="mr-2" style="color: #edcc13;">•</span>
-                Industry collaborations
-              </li>
-            </ul>
-            <button on:click={openForm} class="w-full text-white py-2 rounded-lg hover:bg-[#d4b312] transition-colors" style="background-color: #edcc13;">
-              Apply Now
-            </button>
-          </div>
-        </div>
-
-        <!-- Management Program -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-          <div class="h-48" style="background-color: #edcc13;">
-            <img src="/Images/amity/amityuniversity.jpg" alt="Management programs" class="w-full h-full object-cover"/>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Management Studies</h3>
-            <ul class="space-y-2 text-gray-600 mb-4">
-              <li class="flex items-center">
-                <span class="mr-2" style="color: #edcc13;">•</span>
-                Global business perspective
+                Fees: ₹1,99,000/year
               </li>
               <li class="flex items-center">
                 <span class="mr-2" style="color: #edcc13;">•</span>
@@ -286,25 +260,82 @@
           </div>
         </div>
 
-        <!-- Research Program -->
+        <!-- BBA Program -->
         <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
           <div class="h-48" style="background-color: #edcc13;">
-            <img src="/Images/amity/amityuniversity2.jpg" alt="Research programs" class="w-full h-full object-cover"/>
+            <img src="/Images/amity/amityuniversity.jpg" alt="BBA program" class="w-full h-full object-cover"/>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Research Programs</h3>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">BBA</h3>
+            <p class="text-gray-600 mb-2">Bachelor of Business Administration</p>
             <ul class="space-y-2 text-gray-600 mb-4">
               <li class="flex items-center">
-                <span class="text-orange-500 mr-2">•</span>
-                Doctoral programs
+                <span class="mr-2" style="color: #edcc13;">•</span>
+                Fees: ₹2,10,000/year
               </li>
               <li class="flex items-center">
-                <span class="text-orange-500 mr-2">•</span>
-                Research funding
+                <span class="mr-2" style="color: #edcc13;">•</span>
+                Leadership skills
               </li>
               <li class="flex items-center">
-                <span class="text-orange-500 mr-2">•</span>
-                International collaborations
+                <span class="mr-2" style="color: #edcc13;">•</span>
+                Career development
+              </li>
+            </ul>
+            <button on:click={openForm} class="w-full text-white py-2 rounded-lg hover:bg-[#d4b312] transition-colors" style="background-color: #edcc13;">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- MCA Program -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48" style="background-color: #edcc13;">
+            <img src="/Images/amity/amityuniversity2.jpg" alt="MCA program" class="w-full h-full object-cover"/>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">MCA</h3>
+            <p class="text-gray-600 mb-2">Master of Computer Applications</p>
+            <ul class="space-y-2 text-gray-600 mb-4">
+              <li class="flex items-center">
+                <span class="mr-2" style="color: #edcc13;">•</span>
+                fees: ₹1,70,000/year
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2" style="color: #edcc13;">•</span>
+                Software development
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2" style="color: #edcc13;">•</span>
+                Industry projects
+              </li>
+            </ul>
+            <button on:click={openForm} class="w-full text-white py-2 rounded-lg hover:bg-[#d4b312] transition-colors" style="background-color: #edcc13;">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- BCA Program -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48" style="background-color: #edcc13;">
+            <img src="/Images/amity/amityuniversity3.png" alt="BCA program" class="w-full h-full object-cover"/>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">BCA</h3>
+            <p class="text-gray-600 mb-2">Bachelor of Computer Applications</p>
+            <ul class="space-y-2 text-gray-600 mb-4">
+              <li class="flex items-center">
+                <span class="mr-2" style="color: #edcc13;">•</span>
+                Fees : ₹1,50,000/year
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2" style="color: #edcc13;">•</span>
+                Database management
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2" style="color: #edcc13;">•</span>
+                IT applications
               </li>
             </ul>
             <button on:click={openForm} class="w-full text-white py-2 rounded-lg hover:bg-[#d4b312] transition-colors" style="background-color: #edcc13;">
